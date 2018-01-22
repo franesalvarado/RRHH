@@ -1,20 +1,92 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<!--CONTENIDO DE BARRA HEADER-->
+<mat-toolbar color="warn" class="mat-toolbar-header">
+  <!--Buton de apertura y cierre de mat-sidenav-->
+    <button class="hamburger" mat-button (click)="sidenav.toggle()" class="sidenav-icon">
+      <mat-icon class="mat-icon">menu</mat-icon>
+    </button>
+  <!--Imagen de Angular-->
+    <!-- <img src="assets/img/Ng.png"> -->
+    Aplicacion
+    <span class="space-filler"></span>
+    <!-- <app-dialog-busqueda class="{{cssEstado}}"></app-dialog-busqueda> -->
+  <!--Buton de apertura y cierre de barra de busqueda-->
+    <button mat-icon-button class="buscar-icon"  (click)="estadoBotonBusqueda(value)">
+      <mat-icon>search</mat-icon>
+    </button>
+  
+  </mat-toolbar>
+  <!--FIN CONTENIDO DE BARRA HEADER-->
+  
+  <!--CONTENIDO DE SIDENAV IZQUIERDO-->
+  <mat-sidenav-container class="mat-sidenav-container-close">
+    <mat-sidenav #sidenav mode="over" opened="false" [fixedInViewport]="false" nofocus>
+      <mat-toolbar class="user-info" color="warn">
+      <!--Menu de Usuario-->
+        <mat-toolbar-row>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>face</mat-icon>
+              <span>Francisco Alvarado</span>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                  <mat-icon>fingerprint</mat-icon>
+                  <span>Cambiar contraseña</span>
+              </button>
+              <button mat-menu-item>
+                  <mat-icon>power_settings_new</mat-icon>
+                  <span>Salir</span>
+              </button>
+            </mat-menu>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <!--Fin de menu de Usuario-->
+  
+      <!--Opciones Sidenav-->
+      <div class="vertical-menu">
+          <!--Opciones acordeon-->
+          <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Listado de Personal
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-action-row>
+                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-personal"  >Todos</button>
+                </mat-action-row>
+                <mat-action-row>
+                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material">Becados</button>
+                </mat-action-row>
+                <mat-action-row>
+                    <button mat-button (click)="sidenav.toggle()" >Coordinados</button>
+                </mat-action-row>
+                <mat-action-row>
+                    <button mat-button (click)="sidenav.toggle()">Planta Permanente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+         <!--Fin de opciones acordeon-->
+          <!--Opciones individuales-->
+          <a class="vertical-menu-item">
+            <mat-icon>chrome_reader_mode</mat-icon>
+            <span class="text-opcion">Registro Historico</span>
+          </a>
+          <a class="vertical-menu-item">
+            <mat-icon>chrome_reader_mode</mat-icon>
+            <span class="text-opcion">Alerta</span>  
+          </a>
+          <a class="vertical-menu-item">
+            <mat-icon>chrome_reader_mode</mat-icon>
+            <span class="text-opcion">Tercera Opcion</span>    
+          </a>
+          <a class="vertical-menu-item">
+            <mat-icon>chrome_reader_mode</mat-icon>
+            <span class="text-opcion">Cuarta Opcion</span>
+         </a>
+        </div>
+        <span class="divier-menu"></span>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <section class="router-outlet-area"><router-outlet></router-outlet></section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

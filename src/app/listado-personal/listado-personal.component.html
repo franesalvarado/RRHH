@@ -1,0 +1,13 @@
+<div class="espacio-trabajo">
+    <h3 class="first">Basic</h3>
+    <p-dataTable [value]="empleado" [loading]="loading">
+        <p-column field="nombre" header="Nombre"></p-column>
+        <p-column field="legajo" header="Legajo"></p-column>
+        <p-column field="tipoContrato" header="Categoria"></p-column>
+    </p-dataTable>
+    
+    <h3>Dynamic Columns</h3>
+    <p-dataTable [value]="empleado">
+        <p-column *ngFor="let columna of columnas" [field]="columna.field" [header]="columna.header"></p-column>
+    </p-dataTable>
+</div>

@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public estadoBoolean:boolean;
+  public cssEstado:string;
+  dialogResult = '';
+  constructor() { 
+    this.estadoBoolean=false;
+    this.cssEstado="busquedaVisible";
+  }
+
+  estadoBotonBusqueda(){
+    if (this.estadoBoolean=true){
+      this.cssEstado="busquedaVisible";
+      this.estadoBoolean=false;
+    }
+    else{
+      this.cssEstado="busquedaOculta";
+      this.estadoBoolean=true;
+    }
+  }
 }
