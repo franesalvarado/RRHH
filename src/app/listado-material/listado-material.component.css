@@ -21,7 +21,8 @@
   .example-container {
     display: flex;
     flex-direction: column;
-    height: 83%;
+    height: 82%;
+    box-shadow: none;
   }
 
   .mat-form-field {
@@ -32,7 +33,6 @@
   .mat-table {
     overflow: auto;
     max-height: 700px;
-    margin-top: 1%;
     box-shadow: none;
     
   }
@@ -46,3 +46,21 @@
     left: 75%;
     position: relative;
   }
+
+  ng-container{
+    padding: 0%;
+
+  }
+
+  .mat-row, .mat-header-row {
+    flex: 1;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0px, 5px, 0px, 5px;
+    width: 100%;
+}
+
+.mat-header-row{
+  background-color: #e4e4e4;
+}

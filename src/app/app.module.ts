@@ -16,6 +16,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListadoMaterialComponent } from './listado-material/listado-material.component';
 import { DialogTableComponent } from './dialog-table/dialog-table.component';
+import { InformacionHistoricaComponent } from './informacion-historica/informacion-historica.component';
 
 
 
@@ -24,14 +25,16 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   // Se cargan las rutas
   { path: 'listado-material', component: ListadoMaterialComponent  },
-  { path: 'listado-material/:page', component: ListadoMaterialComponent  }
+  { path: 'listado-material/:page', component: ListadoMaterialComponent  },
+  { path: 'informacion-historica', component: InformacionHistoricaComponent  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoMaterialComponent,
-    DialogTableComponent
+    DialogTableComponent,
+    InformacionHistoricaComponent
   ],
   imports: [
     BrowserModule,

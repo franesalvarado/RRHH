@@ -12,7 +12,7 @@
         <!-- Position Column -->
         <ng-container matColumnDef="position" >
           <mat-header-cell *matHeaderCellDef> Nro. </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          <mat-cell *matCellDef="let element" > {{element.position}} </mat-cell>
         </ng-container>
 
         <!-- Name Column -->
@@ -34,7 +34,7 @@
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="highlight" (click)="selectRow(row)"></mat-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></mat-row>
       </mat-table>
       </div>
     </div>

@@ -30,12 +30,12 @@ export class ListadoMaterialComponent implements OnInit {
   ngOnInit() {
     this._route.params.forEach((params: Params) => {
         this.parametro = params['page'];
-        console.log(this.parametro);
+        // console.log(this.parametro);
         if (this.parametro != null){
           this.ELEMENT_DATA_SELECT = [];
           for (let i in ELEMENT_DATA){
             if (ELEMENT_DATA[i].tipoContrato == this.parametro){
-              console.log(ELEMENT_DATA[i]);
+              // console.log(ELEMENT_DATA[i]);
               this.ELEMENT_DATA_SELECT.push(ELEMENT_DATA[i]);
             }
           }
