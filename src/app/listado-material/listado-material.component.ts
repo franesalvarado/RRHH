@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material';
 import { MatDialog } from '@angular/material';
 
 import { DialogTableComponent } from '../dialog-table/dialog-table.component';
+import { DataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-listado-material',
@@ -13,11 +14,12 @@ import { DialogTableComponent } from '../dialog-table/dialog-table.component';
   styleUrls: ['./listado-material.component.css']
 })
 export class ListadoMaterialComponent implements OnInit {
-  public parametro;
+  public parametro = null;
   dialogResult: DataDialog;
   displayedColumns = ['position', 'name', 'legajo', 'tipoContrato'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   direccion = 'Direccion de Gestion Informatizada';
+  ELEMENT_DATA_SELECT = [];
 
   constructor(
     public dialog: MatDialog,
@@ -28,7 +30,17 @@ export class ListadoMaterialComponent implements OnInit {
   ngOnInit() {
     this._route.params.forEach((params: Params) => {
         this.parametro = params['page'];
-        console.log(this.parametro)
+        console.log(this.parametro);
+        if (this.parametro != null){
+          this.ELEMENT_DATA_SELECT = [];
+          for (let i in ELEMENT_DATA){
+            if (ELEMENT_DATA[i].tipoContrato == this.parametro){
+              console.log(ELEMENT_DATA[i]);
+              this.ELEMENT_DATA_SELECT.push(ELEMENT_DATA[i]);
+            }
+          }
+          this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
+        }
     })
   }
 
@@ -85,7 +97,7 @@ const ELEMENT_DATA: Element[] = [
   {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado'},
   {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado'},
   {position: 10, name: 'Gisela', legajo: 59125, tipoContrato: 'Planta Permanente'},
-  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanete'},
+  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanente'},
   {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado'}
 ];
 
