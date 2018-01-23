@@ -52,16 +52,16 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-personal"  >Todos</button>
+                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material">Todos</button>
                 </mat-action-row>
                 <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material">Becados</button>
+                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material/Becado">Becados</button>
                 </mat-action-row>
                 <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()" >Coordinados</button>
+                    <button mat-button (click)="sidenav.toggle()"routerLink="listado-material/Coordinado">Coordinados</button>
                 </mat-action-row>
                 <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()">Planta Permanente</button>
+                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material/Planta Permanente">Planta Permanente</button>
                 </mat-action-row>
               </mat-expansion-panel>
             </mat-accordion>

@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 // Imports de Material
@@ -13,8 +14,8 @@ import { NgPrimeModule } from './commons/ngprime.module';
 // Imports de rutas
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ListadoPersonalComponent } from './listado-personal/listado-personal.component';
 import { ListadoMaterialComponent } from './listado-material/listado-material.component';
+import { DialogTableComponent } from './dialog-table/dialog-table.component';
 
 
 
@@ -22,15 +23,15 @@ const routes: Routes = [
   // Home
   { path: '', redirectTo: '/', pathMatch: 'full' },
   // Se cargan las rutas
-  { path: 'listado-personal', component: ListadoPersonalComponent },
-  { path: 'listado-material', component: ListadoMaterialComponent  }
+  { path: 'listado-material', component: ListadoMaterialComponent  },
+  { path: 'listado-material/:page', component: ListadoMaterialComponent  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoPersonalComponent,
-    ListadoMaterialComponent
+    ListadoMaterialComponent,
+    DialogTableComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,12 @@ const routes: Routes = [
     HttpClientModule,
     MaterialModule,
     NgPrimeModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
+  ],
+  entryComponents: [
+    DialogTableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

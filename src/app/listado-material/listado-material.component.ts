@@ -1,28 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpleadoService } from '../servicios/empleado.service';
-import { Empleado } from '../models/empleados';
-import {MatTableDataSource} from '@angular/material';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import { Empleado, DataDialog } from '../models/empleados';
+import { MatTableDataSource } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
-
+import { DialogTableComponent } from '../dialog-table/dialog-table.component';
 
 @Component({
   selector: 'app-listado-material',
   templateUrl: './listado-material.component.html',
-  styleUrls: ['./listado-material.component.css'],
-  providers: [ EmpleadoService ]
+  styleUrls: ['./listado-material.component.css']
 })
 export class ListadoMaterialComponent implements OnInit {
+  public parametro;
+  dialogResult: DataDialog;
   displayedColumns = ['position', 'name', 'legajo', 'tipoContrato'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  empleado: Empleado[];
   direccion = 'Direccion de Gestion Informatizada';
 
   constructor(
-    private _empleadoService: EmpleadoService
+    public dialog: MatDialog,
+    private _route: ActivatedRoute,
+    private _router: Router
   ) { }
 
   ngOnInit() {
+    this._route.params.forEach((params: Params) => {
+        this.parametro = params['page'];
+        console.log(this.parametro)
+    })
   }
 
   applyFilter(filterValue: string) {
@@ -32,9 +39,20 @@ export class ListadoMaterialComponent implements OnInit {
   }
 
   selectRow(value) {
-    console.log(value);
+    this.openDialog(value);
   }
- 
+
+  openDialog(value) {
+    const dialogRef = this.dialog.open(DialogTableComponent, {
+      width: '600px',
+      data: value
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog closed: ` + result);
+      this.dialogResult = result;
+    });
+  }
 
 }
 
@@ -62,7 +80,7 @@ const ELEMENT_DATA: Element[] = [
   {position: 3, name: 'Oscar', legajo: 51635, tipoContrato: 'Coordinado'},
   {position: 4, name: 'Francisco', legajo: 81621, tipoContrato: 'Becado'},
   {position: 5, name: 'Juan', legajo: 50215, tipoContrato: 'Coordinado'},
-  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanete'},
+  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanente'},
   {position: 7, name: 'Braian', legajo: 80014, tipoContrato: 'Becado'},
   {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado'},
   {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado'},

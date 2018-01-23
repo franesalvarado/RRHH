@@ -1,0 +1,26 @@
+<div class="contenedor-principal">
+  <h2 mat-dialog-title>{{data.name}}</h2>
+  <hr>
+  <mat-dialog-content>
+  <form>
+    <mat-form-field class="formDeEleccion">
+      <input type="text" placeholder="Selecciona una opcion..." aria-label="Number" matInput [formControl]='myControl' [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+   </form>
+
+    <br>
+    <br>
+  </mat-dialog-content>
+  <mat-dialog-content>
+    <hr>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
+    <button mat-raised-button (click)="onCloseCancel()">CANCELAR</button>
+  </mat-dialog-actions>
+</div>
