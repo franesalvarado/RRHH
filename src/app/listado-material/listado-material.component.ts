@@ -5,7 +5,7 @@ import { Empleado, DataDialog } from '../models/empleados';
 import { MatTableDataSource } from '@angular/material';
 import { MatDialog } from '@angular/material';
 
-import { DialogTableComponent } from '../dialog-table/dialog-table.component';
+import { DialogTableComponent } from '../dialog-table-faltas/dialog-table.component';
 import { DataSource } from '@angular/cdk/collections';
 
 @Component({

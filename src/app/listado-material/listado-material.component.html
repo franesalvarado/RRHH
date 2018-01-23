@@ -1,11 +1,14 @@
 <div class="contenedor-outlet">
-      <div class="example-header">
-        <div class="title-header">Personal de la {{direccion}}</div>
+  <mat-card>
+      <mat-card-header>
+        <mat-card-title><h1>Personal de la {{direccion}}</h1></mat-card-title>
+      </mat-card-header>
+    <mat-card-content>
         <mat-form-field class="input-mat">
-          <input matInput (keyup)="applyFilter($event.target.value)"   placeholder="Busqueda rapida...">
-        </mat-form-field>
-      </div>
-
+            <input matInput (keyup)="applyFilter($event.target.value)"   placeholder="Busqueda rapida...">
+          </mat-form-field>
+    </mat-card-content>
+  </mat-card>
       <div class="mat-elevation-z8 example-container">
       <mat-table #table [dataSource]="dataSource">
 

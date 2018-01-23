@@ -15,8 +15,9 @@ import { NgPrimeModule } from './commons/ngprime.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListadoMaterialComponent } from './listado-material/listado-material.component';
-import { DialogTableComponent } from './dialog-table/dialog-table.component';
+import { DialogTableComponent } from './dialog-table-faltas/dialog-table.component';
 import { InformacionHistoricaComponent } from './informacion-historica/informacion-historica.component';
+import { DialogHistoricoComponent } from './dialog-historico/dialog-historico.component';
 
 
 
@@ -34,7 +35,8 @@ const routes: Routes = [
     AppComponent,
     ListadoMaterialComponent,
     DialogTableComponent,
-    InformacionHistoricaComponent
+    InformacionHistoricaComponent,
+    DialogHistoricoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   entryComponents: [
-    DialogTableComponent
+    DialogTableComponent,
+    DialogHistoricoComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

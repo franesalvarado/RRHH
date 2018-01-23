@@ -1,28 +1,18 @@
 .contenedor-outlet{
   height: 100%;
   width: 100%;
-  box-shadow: 5px 5px 10px 10px #888888;
 }
-  .example-header {
-    height: 16%;
-    background-color: #e4e4e4;
-    padding: 4px 24px 8px;
+  mat-card{
+    height: 20%;
+    box-shadow: none;
   }
-    .title-header{
-      color: rgb(83, 83, 83);
-      font-size: 28px;
-      text-align: center;
-      width: 100%;
-      margin-top: 1%;
-      position: relative;
-    }
-
 
   .example-container {
     display: flex;
     flex-direction: column;
-    height: 82%;
+    height: 70%;
     box-shadow: none;
+    border: solid 1px #e2e2e2;
   }
 
   .mat-form-field {
