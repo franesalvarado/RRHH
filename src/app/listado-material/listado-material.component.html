@@ -1,7 +1,8 @@
 <div class="contenedor-outlet">
   <mat-card>
       <mat-card-header>
-        <mat-card-title><h1>Personal de la {{direccion}}</h1></mat-card-title>
+        <mat-card-title><h1>Listado del Personal</h1></mat-card-title>
+        <mat-card-subtitle>En caso de faltar personal, comunicarse con la Direccion General de Recursos Humanos.</mat-card-subtitle>
       </mat-card-header>
     <mat-card-content>
         <mat-form-field class="input-mat">
@@ -36,8 +37,14 @@
           <mat-cell *matCellDef="let element"> {{element.tipoContrato}} </mat-cell>
         </ng-container>
 
+        <!-- confirmado Column -->
+        <ng-container matColumnDef="confirmado">
+          <mat-header-cell *matHeaderCellDef> Confirmado </mat-header-cell>
+          <mat-cell *matCellDef="let element"> <i class="material-icons">{{element.confirmado}}</i> </mat-cell>
+        </ng-container>
+
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></mat-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)" [style.background]="row.color" ></mat-row>
       </mat-table>
       </div>
     </div>

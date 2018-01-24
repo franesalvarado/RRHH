@@ -29,6 +29,7 @@ export class DialogTableComponent implements OnInit {
   constructor(public thisDialogRef: MatDialogRef<DialogTableComponent>, @Inject(MAT_DIALOG_DATA) public data: Empleado) {
     // this.dataDialog.tipoFalta = '';
     // this.dataDialog.value = false;
+    // this.myControl.valueChanges = 'Ausencia sin aviso';
   }
 
   ngOnInit() {

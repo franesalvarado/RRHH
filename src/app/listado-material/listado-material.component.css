@@ -30,16 +30,15 @@
   .mat-column-position{
     max-width: 50px;
   }
+  .mat-column-confirmado{
+    max-width: 80px;
+    text-align: center;
+  }
 
   .input-mat{
     width: 25%;
     left: 75%;
     position: relative;
-  }
-
-  ng-container{
-    padding: 0%;
-
   }
 
   .mat-row, .mat-header-row {
