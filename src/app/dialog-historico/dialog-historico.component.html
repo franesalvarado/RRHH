@@ -1,3 +1,28 @@
-<p>
-  dialog-historico works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{data.name}}</h2></mat-card-title>
+    <mat-card-subtitle>Informacion detallada del agente</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group class="demo-tab-group">
+      <mat-tab label="Cantidad de faltas">
+        <div class="demo-tab-content">
+          <p>Faltas en el transcurso del mes: {{data.cantFaltasMensual}} jornadas</p>
+          <p>Faltas en el transcurso del año: {{data.cantFaltasTotal}} jornadas</p>
+        </div>
+      </mat-tab>
+      <mat-tab label="Licencia anual extraordinaria">
+        <div class="demo-tab-content">
+        <p>Cantidad de licencia gozadas: 21 dias</p>
+        <p>Cantidad de licencia disponible: {{data.cantRestVacaciones}} dias</p>
+        </div>  
+      </mat-tab>
+      <mat-tab label="Detalles del agentes" disabled>
+        No content  
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,50 @@
+mat-card{
+    height: 20%;
+    box-shadow: none;
+  }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    box-shadow: none;
+    border: solid 1px #e2e2e2;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 700px;
+    box-shadow: none; 
+  }
+
+  .mat-column-position{
+    max-width: 50px;
+  }
+
+  .input-mat{
+    width: 25%;
+    left: 75%;
+    position: relative;
+  }
+
+  ng-container{
+    padding: 0%;
+  }
+
+  .mat-row, .mat-header-row {
+    flex: 1;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0px, 5px, 0px, 5px;
+    width: 100%;
+}
+
+.mat-header-row{
+  background-color: #e4e4e4;
+}

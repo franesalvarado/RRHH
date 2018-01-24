@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-import { MatDialog } from '@angular/material';
-import { DataSource } from '@angular/cdk/collections';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Empleado, DataDialog } from '../models/empleados';
+
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { startWith } from 'rxjs/operators/startWith';
+import { map } from 'rxjs/operators/map';
 
 
 @Component({
@@ -11,11 +15,13 @@ import { DataSource } from '@angular/cdk/collections';
 })
 export class DialogHistoricoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public thisDialogRef: MatDialogRef<DialogHistoricoComponent>, @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
   }
-
+  onCloseCancel() {
+    this.thisDialogRef.close('Cancel');
+  }
 }
 
 

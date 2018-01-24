@@ -31,17 +31,17 @@ export class ListadoMaterialComponent implements OnInit {
     this._route.params.forEach((params: Params) => {
         this.parametro = params['page'];
         // console.log(this.parametro);
-        if (this.parametro != null){
+        if (this.parametro != null) {
           this.ELEMENT_DATA_SELECT = [];
-          for (let i in ELEMENT_DATA){
-            if (ELEMENT_DATA[i].tipoContrato == this.parametro){
+          for (let i in ELEMENT_DATA) {
+            if (ELEMENT_DATA[i].tipoContrato == this.parametro) {
               // console.log(ELEMENT_DATA[i]);
               this.ELEMENT_DATA_SELECT.push(ELEMENT_DATA[i]);
             }
           }
           this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
         }
-    })
+    });
   }
 
   applyFilter(filterValue: string) {
@@ -52,6 +52,7 @@ export class ListadoMaterialComponent implements OnInit {
 
   selectRow(value) {
     this.openDialog(value);
+    console.log(value);
   }
 
   openDialog(value) {
@@ -83,22 +84,37 @@ export interface Element {
   position: number;
   legajo: number;
   tipoContrato: string;
+  cantFaltasMensual: number;
+  cantFaltasTotal: number;
+  cantRestVacaciones: number;
 }
 
 
 const ELEMENT_DATA: Element[] = [
-  {position: 1, name: 'Pablo', legajo: 51628, tipoContrato: 'Coordinado'},
-  {position: 2, name: 'Luis', legajo: 51629, tipoContrato: 'Coordinado'},
-  {position: 3, name: 'Oscar', legajo: 51635, tipoContrato: 'Coordinado'},
-  {position: 4, name: 'Francisco', legajo: 81621, tipoContrato: 'Becado'},
-  {position: 5, name: 'Juan', legajo: 50215, tipoContrato: 'Coordinado'},
-  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanente'},
-  {position: 7, name: 'Braian', legajo: 80014, tipoContrato: 'Becado'},
-  {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado'},
-  {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado'},
-  {position: 10, name: 'Gisela', legajo: 59125, tipoContrato: 'Planta Permanente'},
-  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanente'},
-  {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado'}
+  {position: 1, name: 'Pablo', legajo: 51628, tipoContrato: 'Coordinado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 2, name: 'Luis', legajo: 51629, tipoContrato: 'Coordinado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 3, name: 'Oscar', legajo: 51635, tipoContrato: 'Coordinado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 4, name: 'Francisco', legajo: 81621, tipoContrato: 'Becado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 5, name: 'Juan', legajo: 50215, tipoContrato: 'Coordinado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanente',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 7, name: 'Braian', legajo: 80014, tipoContrato: 'Becado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 10, name: 'Gisela', legajo: 59125, tipoContrato: 'Planta Permanente',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanente',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5},
+  {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado',
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5}
 ];
 
 /**
