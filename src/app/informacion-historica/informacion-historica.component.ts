@@ -3,11 +3,13 @@ import { MatTableDataSource } from '@angular/material';
 import { MatDialog } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
 import { DialogHistoricoComponent } from '../dialog-historico/dialog-historico.component';
+import { EmpleadoService } from '../servicios/empleado.service';
 
 @Component({
   selector: 'app-informacion-historica',
   templateUrl: './informacion-historica.component.html',
-  styleUrls: ['./informacion-historica.component.css']
+  styleUrls: ['./informacion-historica.component.css'],
+  providers: [ EmpleadoService ]
 })
 export class InformacionHistoricaComponent implements OnInit {
 
@@ -17,7 +19,8 @@ export class InformacionHistoricaComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _empleadoService: EmpleadoService
   ) { }
 
   ngOnInit() {

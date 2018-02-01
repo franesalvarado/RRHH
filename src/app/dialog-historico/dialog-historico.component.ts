@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Empleado, DataDialog } from '../models/empleados';
+import { Empleado } from '../models/empleados';
 
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';

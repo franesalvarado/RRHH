@@ -1,9 +1,10 @@
-export interface Empleado {
-    nombre: string; legajo: number; tipoContrato: any;
+export class Empleado{
+    position: number;
+    name: string;
+    legajo: number;
+    tipoContrato: string;
+    cantFaltasMensual: number;
+    cantFaltasTotal: number;
+    cantRestVacaciones: number;
 }
-
-export interface DataDialog {
-    tipoFalta: string; value: boolean;
-}
-
-export interface EmpleadosArray extends Array<Empleado> {}
+  
