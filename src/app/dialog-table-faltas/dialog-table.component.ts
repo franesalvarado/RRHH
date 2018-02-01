@@ -49,7 +49,7 @@ export class DialogTableComponent implements OnInit {
   onCloseConfirm() {
     // this.dataDialog.value = true;
     // this.dataDialog.tipoFalta = this.myControl.value;
-    this.thisDialogRef.close(this.myControl.value);
+    this.thisDialogRef.close('confirm');
     console.log(this.dataDialog);
   }
 

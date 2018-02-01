@@ -5,7 +5,7 @@
   <form>
     <mat-form-field class="formDeEleccion">
       <input type="text" placeholder="Selecciona una opcion..." aria-label="Number" matInput [formControl]='myControl' [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete" isOpen=false>
+      <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
           {{ option }}
         </mat-option>

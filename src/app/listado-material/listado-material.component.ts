@@ -41,7 +41,7 @@ export class ListadoMaterialComponent implements OnInit {
           }
           this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
         }else{
-          for (let i in ELEMENT_DATA) {
+          for (let i in ELEMENT_DATA){
             this.ELEMENT_DATA_SELECT.push(ELEMENT_DATA[i]);
             if (ELEMENT_DATA[i].cantFaltasMensual > 2){
               if (ELEMENT_DATA[i].cantFaltasMensual > 4){
@@ -106,53 +106,53 @@ export interface Element {
 
 
 const ELEMENT_DATA: Element[] = [
-  {position: 1, name: 'Pablo', legajo: 51628, tipoContrato: 'Coordinado', 
+  {position: 1, name: 'Pablo', legajo: 51628, tipoContrato: 'Coordinado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 0, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
-  
-  {position: 2, name: 'Luis', legajo: 51629, tipoContrato: 'Coordinado', 
-  confirmado: 'error_outline',
-  cantFaltasMensual: 1, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 0, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 3, name: 'Oscar', legajo: 51635, tipoContrato: 'Coordinado',  
+  {position: 2, name: 'Luis', legajo: 51629, tipoContrato: 'Coordinado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 1, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 4, name: 'Francisco', legajo: 81621, tipoContrato: 'Becado', 
+  {position: 3, name: 'Oscar', legajo: 51635, tipoContrato: 'Coordinado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 1, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 5, name: 'Juan', legajo: 50215, tipoContrato: 'Coordinado', 
+  {position: 4, name: 'Francisco', legajo: 81621, tipoContrato: 'Becado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 6, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 1, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanente', 
+  {position: 5, name: 'Juan', legajo: 50215, tipoContrato: 'Coordinado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 8, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 6, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 7, name: 'Braian', legajo: 80014, tipoContrato: 'Becado', 
+  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanente',
   confirmado: 'error_outline',
-  cantFaltasMensual: 3, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 8, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado', 
+  {position: 7, name: 'Braian', legajo: 80014, tipoContrato: 'Becado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 1, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 3, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado', 
+  {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 5, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 1, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 10, name: 'Gisela', legajo: 59125, tipoContrato: 'Planta Permanente', 
+  {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado',
   confirmado: 'error_outline',
-  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 5, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanente', 
+  {position: 10, name: 'Gisela', legajo: 59125, tipoContrato: 'Planta Permanente',
   confirmado: 'error_outline',
-  cantFaltasMensual: 4, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null},
+  cantFaltasMensual: 2, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
 
-  {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado', 
+  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanente',
   confirmado: 'error_outline',
-  cantFaltasMensual: 0, cantFaltasTotal: 8, cantRestVacaciones: 5, color:null}
+  cantFaltasMensual: 4, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null},
+
+  {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado',
+  confirmado: 'error_outline',
+  cantFaltasMensual: 0, cantFaltasTotal: 8, cantRestVacaciones: 5, color: null}
 ];
 
 /**
