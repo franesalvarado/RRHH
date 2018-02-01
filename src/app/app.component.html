@@ -71,13 +71,9 @@
             <mat-icon>timeline</mat-icon>
             <span class="text-opcion">Registro Historico</span>
           </a>
-          <a class="vertical-menu-item">
+          <a class="vertical-menu-item" (click)="sidenav.toggle()" routerLink="alertas">
             <mat-icon>new_releases</mat-icon>
             <span class="text-opcion">Alertas ({{cantAlertas}})</span>  
-          </a>
-          <a class="vertical-menu-item">
-            <mat-icon>new_releases</mat-icon>
-            <span class="text-opcion">Tercera Opcion</span>    
           </a>
         </div>
         <span class="divier-menu"></span>

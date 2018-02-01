@@ -18,6 +18,7 @@ import { ListadoMaterialComponent } from './listado-material/listado-material.co
 import { DialogTableComponent } from './dialog-table-faltas/dialog-table.component';
 import { InformacionHistoricaComponent } from './informacion-historica/informacion-historica.component';
 import { DialogHistoricoComponent } from './dialog-historico/dialog-historico.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 
@@ -27,7 +28,8 @@ const routes: Routes = [
   // Se cargan las rutas
   { path: 'listado-material', component: ListadoMaterialComponent  },
   { path: 'listado-material/:page', component: ListadoMaterialComponent  },
-  { path: 'informacion-historica', component: InformacionHistoricaComponent  }
+  { path: 'informacion-historica', component: InformacionHistoricaComponent  },
+  { path: 'alertas', component: AlertasComponent  }
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const routes: Routes = [
     ListadoMaterialComponent,
     DialogTableComponent,
     InformacionHistoricaComponent,
-    DialogHistoricoComponent
+    DialogHistoricoComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
