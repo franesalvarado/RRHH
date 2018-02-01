@@ -32,8 +32,7 @@ export class ListadoMaterialComponent implements OnInit {
 
   ngOnInit() {
     this.empleados = this._empleadoService.getEmpleados();
-    console.log(this.empleados)
-    this.dataSource = this.empleados;
+    console.log(this.empleados);
     this._route.params.forEach((params: Params) => {
         this.parametro = params['page'];
         // console.log(this.parametro);
