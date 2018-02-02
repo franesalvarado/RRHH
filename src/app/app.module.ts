@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 // Imports de Material
 import { MaterialModule } from './commons/material.module';
 import { NgPrimeModule } from './commons/ngprime.module';
@@ -14,6 +12,7 @@ import { NgPrimeModule } from './commons/ngprime.module';
 // Imports de rutas
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 import { ListadoMaterialComponent } from './listado-material/listado-material.component';
 import { DialogTableComponent } from './dialog-table-faltas/dialog-table.component';
 import { InformacionHistoricaComponent } from './informacion-historica/informacion-historica.component';
@@ -26,10 +25,11 @@ const routes: Routes = [
   // Home
   { path: '', redirectTo: '/', pathMatch: 'full' },
   // Se cargan las rutas
-  { path: 'listado-material', component: ListadoMaterialComponent  },
-  { path: 'listado-material/:page', component: ListadoMaterialComponent  },
-  { path: 'informacion-historica', component: InformacionHistoricaComponent  },
-  { path: 'alertas', component: AlertasComponent  }
+  { path: 'login', component: LoginComponent },
+  { path: 'listado-material', component: ListadoMaterialComponent },
+  { path: 'listado-material/:page', component: ListadoMaterialComponent },
+  { path: 'informacion-historica', component: InformacionHistoricaComponent },
+  { path: 'alertas', component: AlertasComponent }
 ];
 
 @NgModule({
@@ -39,7 +39,8 @@ const routes: Routes = [
     DialogTableComponent,
     InformacionHistoricaComponent,
     DialogHistoricoComponent,
-    AlertasComponent
+    AlertasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

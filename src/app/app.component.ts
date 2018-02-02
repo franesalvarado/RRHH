@@ -7,7 +7,7 @@ import { EmpleadoService } from './servicios/empleado.service';
   styleUrls: ['./app.component.css'],
   providers: [ EmpleadoService ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   public estadoBoolean:boolean;
   public cssEstado:string;
   public direccion:string;
