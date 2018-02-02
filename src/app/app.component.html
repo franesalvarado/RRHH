@@ -48,32 +48,19 @@
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    Listado de Personal
+                    {{menuSidenavNombre}}
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-                <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material">Todos</button>
-                </mat-action-row>
-                <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material/Becado">Becados</button>
-                </mat-action-row>
-                <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()"routerLink="listado-material/Coordinado">Coordinados</button>
-                </mat-action-row>
-                <mat-action-row>
-                    <button mat-button (click)="sidenav.toggle()" routerLink="listado-material/Planta Permanente">Planta Permanente</button>
+                <mat-action-row *ngFor="let c of accordionOpciones">
+                    <button mat-button (click)="sidenav.toggle()" routerLink="{{c.routerLink}}">{{c.nombre}}</button>
                 </mat-action-row>
               </mat-expansion-panel>
             </mat-accordion>
          <!--Fin de opciones acordeon-->
           <!--Opciones individuales-->
-          <a class="vertical-menu-item" (click)="sidenav.toggle()" routerLink="informacion-historica">
-            <mat-icon>timeline</mat-icon>
-            <span class="text-opcion">Registro Historico</span>
-          </a>
-          <a class="vertical-menu-item" (click)="sidenav.toggle()" routerLink="alertas">
-            <mat-icon>new_releases</mat-icon>
-            <span class="text-opcion">Alertas ({{cantAlertas}})</span>  
+          <a class="vertical-menu-item" *ngFor="let d of buttonsOpciones" (click)="sidenav.toggle()" routerLink="{{d.routerLink}}">
+            <mat-icon>{{d.icon}}</mat-icon>
+            <span class="text-opcion">{{d.nombre}} ({{cantAlertas}})</span>
           </a>
         </div>
         <span class="divier-menu"></span>
