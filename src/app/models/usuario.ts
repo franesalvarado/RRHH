@@ -2,14 +2,14 @@ export class UsuarioAdmin {
     nombre: string;
     usuario: string;
     legajo: number;
-    tipoPermiso: string;
+    tipoUsuario: string;
 }
 
 export class UsuarioRRHH {
     nombre: string;
     usuario: string;
     legajo: number;
-    tipoPermiso: string;
+    tipoUsuario: string;
     funcion: string;
 }
 

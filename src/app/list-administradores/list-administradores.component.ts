@@ -10,7 +10,7 @@ import { DataSource } from '@angular/cdk/collections';
   providers: [ UsuarioListService ]
 })
 export class ListAdministradoresComponent implements OnInit {
-  displayedColumns = ['nombre', 'usuario', 'legajo', 'tipoPermiso'];
+  displayedColumns = ['nombre', 'usuario', 'legajo', 'tipoUsuario'];
   dataSource;
   usuarios;
   dialogResult;

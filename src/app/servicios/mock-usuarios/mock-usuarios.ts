@@ -4,7 +4,7 @@ export const USUARIOSADMINGLOBAL: UsuarioAdmin[] = [
         nombre: "admin",
         usuario: "admin",
         legajo: 81621,
-        tipoPermiso: "GlobalAdmin"
+        tipoUsuario: "GlobalAdmin"
     }
 ];
 
@@ -13,19 +13,19 @@ export const USUARIOSADMIN: UsuarioAdmin[] = [
         nombre: "Francisco Alvarado",
         usuario: "falvarado",
         legajo: 81621,
-        tipoPermiso: "Admin"
+        tipoUsuario: "Admin"
     },
     {
         nombre: "Pablo Smith",
         usuario: "pablito",
         legajo: 51230,
-        tipoPermiso: "Admin"
+        tipoUsuario: "Admin"
     },
     {
         nombre: "Patricio Husson",
         usuario: "phusson",
         legajo: 81633,
-        tipoPermiso: "Admin"
+        tipoUsuario: "Admin"
     }
 ];
 
@@ -34,21 +34,21 @@ export const PERSONALRRHH: UsuarioRRHH[] = [
         nombre: "Pedro Aznar",
         usuario: "paznar",
         legajo: 81621,
-        tipoPermiso: "RRHH",
-        funcion: "total"
+        tipoUsuario: "RRHH",
+        funcion: "Total"
     },
     {
         nombre: "David Lebon",
         usuario: "dlebon",
         legajo: 51230,
-        tipoPermiso: "RRHH",
+        tipoUsuario: "RRHH",
         funcion: "Vacaciones"
     },
     {
         nombre: "Oscar Moro",
         usuario: "omoro",
         legajo: 81633,
-        tipoPermiso: "RRHH",
+        tipoUsuario: "RRHH",
         funcion: "Enfermedad"
     }
 ];
