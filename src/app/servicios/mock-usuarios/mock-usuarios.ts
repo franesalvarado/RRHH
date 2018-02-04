@@ -31,19 +31,22 @@ export const USUARIOSADMIN: UsuarioAdmin[] = [
 
 export const PERSONALRRHH: UsuarioRRHH[] = [
     {
-        nombre: "paznar",
+        nombre: "Pedro Aznar",
+        usuario: "paznar",
         legajo: 81621,
         tipoPermiso: "RRHH",
         funcion: "total"
     },
     {
-        nombre: "dlebon",
+        nombre: "David Lebon",
+        usuario: "dlebon",
         legajo: 51230,
         tipoPermiso: "RRHH",
         funcion: "Vacaciones"
     },
     {
-        nombre: "omoro",
+        nombre: "Oscar Moro",
+        usuario: "omoro",
         legajo: 81633,
         tipoPermiso: "RRHH",
         funcion: "Enfermedad"
@@ -52,18 +55,24 @@ export const PERSONALRRHH: UsuarioRRHH[] = [
 
 export const DIRECTORES: UsuarioDirector[] = [
     {
-        nombre: "jlbenitez",
+        nombre: "Jose Luis Benitez",
+        usuario: "jlbenitez",
         legajo: 81621,
-        direccion: "DirDeBromatologia"
+        area: "Direccion de Bromatologia",
+        codDireccion: 1
     },
     {
-        nombre: "jcancio",
+        nombre: "Jorge Cancio",
+        usuario: "jcancio",
         legajo: 51230,
-        direccion: "SubsecretariaDeSeguridad"
+        area: "Subsecretaria de Seguridad",
+        codDireccion: 1
     },
     {
-        nombre: "jsparvoli",
+        nombre: "Jorge Sparvoli",
+        usuario: "jsparvoli",
         legajo: 81633,
-        direccion: "DirDeAdministracion"
+        area: "Direccion de Administracion",
+        codDireccion: 1
     }
 ];

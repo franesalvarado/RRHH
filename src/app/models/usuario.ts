@@ -7,6 +7,7 @@ export class UsuarioAdmin {
 
 export class UsuarioRRHH {
     nombre: string;
+    usuario: string;
     legajo: number;
     tipoPermiso: string;
     funcion: string;
@@ -14,6 +15,8 @@ export class UsuarioRRHH {
 
 export class UsuarioDirector {
     nombre: string;
+    usuario: string;
     legajo: number;
-    direccion: string;
+    area: string;
+    codDireccion: number;
 }
