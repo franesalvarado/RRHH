@@ -2,6 +2,7 @@ import { UsuarioRRHH, UsuarioAdmin, UsuarioDirector } from '../../models/usuario
 export const USUARIOSADMINGLOBAL: UsuarioAdmin[] = [
     {
         nombre: "admin",
+        usuario: "admin",
         legajo: 81621,
         tipoPermiso: "GlobalAdmin"
     }
@@ -9,17 +10,20 @@ export const USUARIOSADMINGLOBAL: UsuarioAdmin[] = [
 
 export const USUARIOSADMIN: UsuarioAdmin[] = [
     {
-        nombre: "falvarado",
+        nombre: "Francisco Alvarado",
+        usuario: "falvarado",
         legajo: 81621,
         tipoPermiso: "Admin"
     },
     {
-        nombre: "pablito",
+        nombre: "Pablo Smith",
+        usuario: "pablito",
         legajo: 51230,
         tipoPermiso: "Admin"
     },
     {
-        nombre: "phusson",
+        nombre: "Patricio Husson",
+        usuario: "phusson",
         legajo: 81633,
         tipoPermiso: "Admin"
     }

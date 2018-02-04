@@ -12,7 +12,6 @@ import { MatDialog } from '@angular/material';
   providers: [ EmpleadoService ]
 })
 export class AlertasComponent implements OnInit {
-  public parametro = null;
   displayedColumns = ['position', 'name', 'legajo', 'tipoContrato'];
   dataSource;
   direccion = 'Direccion de Gestion Informatizada';

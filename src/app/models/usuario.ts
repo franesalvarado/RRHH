@@ -1,5 +1,6 @@
 export class UsuarioAdmin {
     nombre: string;
+    usuario: string;
     legajo: number;
     tipoPermiso: string;
 }
