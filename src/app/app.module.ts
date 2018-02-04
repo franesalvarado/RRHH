@@ -18,6 +18,10 @@ import { DialogTableComponent } from './dialog-table-faltas/dialog-table.compone
 import { InformacionHistoricaComponent } from './informacion-historica/informacion-historica.component';
 import { DialogHistoricoComponent } from './dialog-historico/dialog-historico.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { ListAdministradoresComponent } from './list-administradores/list-administradores.component';
+import { ListDirectoresComponent } from './list-directores/list-directores.component';
+import { ListPersonalRrhhComponent } from './list-personal-rrhh/list-personal-rrhh.component';
+import { AgregarUsuarioComponent } from './agregar-usuario/agregar-usuario.component';
 
 
 
@@ -29,7 +33,12 @@ const routes: Routes = [
   { path: 'listado-material', component: ListadoMaterialComponent },
   { path: 'listado-material/:page', component: ListadoMaterialComponent },
   { path: 'informacion-historica', component: InformacionHistoricaComponent },
-  { path: 'alertas', component: AlertasComponent }
+  { path: 'alertas', component: AlertasComponent },
+  { path: 'new-usuarios', component: AgregarUsuarioComponent },
+  { path: 'administradores', component: ListAdministradoresComponent },
+  { path: 'directores', component: ListDirectoresComponent },
+  { path: 'personal-rrhh', component: ListPersonalRrhhComponent }
+  
 ];
 
 @NgModule({
@@ -40,7 +49,11 @@ const routes: Routes = [
     InformacionHistoricaComponent,
     DialogHistoricoComponent,
     AlertasComponent,
-    LoginComponent
+    LoginComponent,
+    ListAdministradoresComponent,
+    ListDirectoresComponent,
+    ListPersonalRrhhComponent,
+    AgregarUsuarioComponent
   ],
   imports: [
     BrowserModule,

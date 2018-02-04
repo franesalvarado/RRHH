@@ -13,6 +13,9 @@ export class AppComponent implements OnInit{
   public cssEstado:string;
   public direccion:string;
   public empleados;
+
+  // Variable para inyectar el menu
+  public tipoUsuario:string;
   public menuSidenavNombre:string;
   public accordionOpciones: accordionOption[];
   public buttonsOpciones: buttonsOption[];
@@ -24,17 +27,23 @@ export class AppComponent implements OnInit{
   ) { 
     this.estadoBoolean=false;
     this.cssEstado="busquedaVisible";
-    this.direccion="Direccion de Gestion Informatizada"
+    this.tipoUsuario="AdminGlobal";
   }
 
   ngOnInit(){
     this.empleados = this._empleadoService.getEmpleados();
-    this.menuSidenavNombre = this._sidenavService.getSidenavDirector().accordionNombre;
-    this.accordionOpciones = this._sidenavService.getSidenavDirector().accordionOpciones;
-    this.buttonsOpciones = this._sidenavService.getSidenavDirector().buttonsOpciones;
-    console.log(this.menuSidenavNombre);
-    console.log(this.accordionOpciones);
-    console.log(this.buttonsOpciones);
+    if (this.tipoUsuario == "Director"){
+      this.menuSidenavNombre = this._sidenavService.getSidenavDirector().accordionNombre;
+      this.accordionOpciones = this._sidenavService.getSidenavDirector().accordionOpciones;
+      this.buttonsOpciones = this._sidenavService.getSidenavDirector().buttonsOpciones;
+      this.direccion="Direccion de Gestion Informatizada"
+    }else 
+      if(this.tipoUsuario == "AdminGlobal"){
+      this.menuSidenavNombre = this._sidenavService.getSidenavAdminGlobal().accordionNombre;
+      this.accordionOpciones = this._sidenavService.getSidenavAdminGlobal().accordionOpciones;
+      this.buttonsOpciones = this._sidenavService.getSidenavAdminGlobal().buttonsOpciones;
+      this.direccion="Administracion General del Sistema"
+    }
     this.cantAlertas = 0;
     for (let i in this.empleados) {
       if (this.empleados[i].cantFaltasMensual > 2){

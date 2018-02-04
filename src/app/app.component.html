@@ -60,7 +60,7 @@
           <!--Opciones individuales-->
           <a class="vertical-menu-item" *ngFor="let d of buttonsOpciones" (click)="sidenav.toggle()" routerLink="{{d.routerLink}}">
             <mat-icon>{{d.icon}}</mat-icon>
-            <span class="text-opcion">{{d.nombre}} ({{cantAlertas}})</span>
+            <span class="text-opcion">{{d.nombre}}</span>
           </a>
         </div>
         <span class="divier-menu"></span>

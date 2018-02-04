@@ -18,7 +18,7 @@ export const SIDENAVDIRECTOR: SidenavDirector = {
             nombre: "Planta Permanente",
             routerLink: "listado-material/Planta Permanente"
         }],
-    buttonsOpciones: 
+    buttonsOpciones:
         [{
             nombre: "Registro Historico",
             routerLink: "informacion-historica",
@@ -32,3 +32,35 @@ export const SIDENAVDIRECTOR: SidenavDirector = {
         ]
 }
 
+export const SIDENAVADMINGLOBAL: SidenavDirector = {
+    accordionNombre: "Listado de usuarios",
+    accordionOpciones:
+        [{
+            nombre: "Agregar Usuario",
+            routerLink: "new-usuarios"
+        },
+        {
+            nombre: "Administradores",
+            routerLink: "administradores"
+        },
+        {
+            nombre: "Directores",
+            routerLink: "directores"
+        },
+        {
+            nombre: "Personal RRHH",
+            routerLink: "personal-rrhh"
+        }],
+    buttonsOpciones:
+        [{
+            nombre: "Agentes excedidos de ausentismo",
+            routerLink: "informacion-historica",
+            icon: "timeline"
+        },
+        {
+            nombre: "Agentes excedidos de licencia",
+            routerLink: "alertas",
+            icon: "new_releases"
+        }
+        ]
+}
