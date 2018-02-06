@@ -3,6 +3,9 @@ import { UsuarioListService } from '../servicios/usuarios-list.service';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
 
+import { MatDialog } from '@angular/material';
+import { DialogAdministradoresComponent } from './dialog-administradores/dialog-administradores.component';
+
 @Component({
   selector: 'app-list-administradores',
   templateUrl: './list-administradores.component.html',
@@ -15,6 +18,7 @@ export class ListAdministradoresComponent implements OnInit {
   usuarios;
   dialogResult;
   constructor(
+    public dialog: MatDialog,
     private _UsuarioList: UsuarioListService
   ) { }
 
@@ -22,5 +26,23 @@ export class ListAdministradoresComponent implements OnInit {
     this.usuarios = this._UsuarioList.getUsuariosAdmin();
     this.dataSource = new MatTableDataSource(this.usuarios);
   }
+  
+  selectRow(value) {
+    this.openDialog(value);
+    console.log(value);
+  }
 
+
+  openDialog(value) {
+    const dialogRef = this.dialog.open(DialogAdministradoresComponent, {
+      width: '600px',
+      data: value
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog closed: ` + result);
+      this.dialogResult = result;
+    });
+
+}
 }

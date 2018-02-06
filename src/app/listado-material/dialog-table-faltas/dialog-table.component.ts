@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Empleado } from '../models/empleados';
+import { Empleado } from '../../models/empleados';
 
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -26,7 +26,9 @@ export class DialogTableComponent implements OnInit {
     'Presente con llegada tarde'
    ];
 
-  constructor(public thisDialogRef: MatDialogRef<DialogTableComponent>, @Inject(MAT_DIALOG_DATA) public data: Empleado) {
+  constructor(public thisDialogRef: MatDialogRef<DialogTableComponent>, 
+              @Inject(MAT_DIALOG_DATA) public data: Empleado) 
+  {
     // this.dataDialog.tipoFalta = '';
     // this.dataDialog.value = false;
     // this.myControl.valueChanges = 'Ausencia sin aviso';

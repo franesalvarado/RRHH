@@ -3,7 +3,7 @@ import { MatTableDataSource } from '@angular/material';
 import { MatDialog } from '@angular/material';
 import { Empleado } from '../models/empleados';
 import { DataSource } from '@angular/cdk/collections';
-import { DialogHistoricoComponent } from '../dialog-historico/dialog-historico.component';
+import { DialogHistoricoComponent } from './dialog-historico/dialog-historico.component';
 import { EmpleadoService } from '../servicios/empleado.service';
 
 @Component({
