@@ -11,8 +11,9 @@ export class DialogAdministradoresComponent implements OnInit {
   dataDialog;
 
   constructor(public thisDialogRef: MatDialogRef<DialogAdministradoresComponent>, 
-              @Inject(MAT_DIALOG_DATA) public data: Empleado) { }
+              @Inject(MAT_DIALOG_DATA) public data) { }
   ngOnInit() {
+    console.log(this.data);
   }
 
 

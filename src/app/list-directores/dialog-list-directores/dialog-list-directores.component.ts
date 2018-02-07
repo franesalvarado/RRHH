@@ -10,7 +10,7 @@ import { Empleado } from '../../models/empleados';
 export class DialogListDirectoresComponent implements OnInit {
   dataDialog;
   constructor(public thisDialogRef: MatDialogRef<DialogListDirectoresComponent>, 
-              @Inject(MAT_DIALOG_DATA) public data: Empleado) { }
+              @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
   }

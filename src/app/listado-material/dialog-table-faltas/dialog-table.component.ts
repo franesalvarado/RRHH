@@ -17,14 +17,7 @@ export class DialogTableComponent implements OnInit {
   myControl: FormControl = new FormControl();
   dataDialog;
   filteredOptions: Observable<string[]>;
-
-  options = [
-    'Ausencia sin aviso',
-    'Ausencia con aviso',
-    'Ausencia por enfermedad',
-    'Presente',
-    'Presente con llegada tarde'
-   ];
+  selected = "Ausencia sin aviso";
 
   constructor(public thisDialogRef: MatDialogRef<DialogTableComponent>, 
               @Inject(MAT_DIALOG_DATA) public data: Empleado) 
@@ -35,17 +28,8 @@ export class DialogTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
-    .pipe(
-      startWith(''),
-      map(val => this.filter(val))
-    );
   }
 
-  filter(val: string): string[] {
-    return this.options.filter(option =>
-      option.toLowerCase().indexOf(val.toLowerCase()) === 0);
-  }
 
 
   onCloseConfirm() {

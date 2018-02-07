@@ -1,4 +1,4 @@
-import { Empleado } from '../../models/empleados';
+import { Empleado, EmpleadoFaltas } from '../../models/empleados';
 export const EMPLEADOS: Empleado[] = [
   {position: 1, name: 'Pablo', legajo: 51628, tipoContrato: 'Coordinado',
   cantFaltasMensual: 2, cantFaltasTotal: 2, cantRestVacaciones: 7},
@@ -25,3 +25,53 @@ export const EMPLEADOS: Empleado[] = [
   {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado',
   cantFaltasMensual: 0, cantFaltasTotal: 3, cantRestVacaciones: 28}];
 
+export const EMPLEADOSFALTAS: EmpleadoFaltas[]= [
+  {
+    legajo: 51268,
+    tipoFalta:
+    [
+      {
+        tipoFalta: "Ausencia con aviso",
+        fecha: "06/02/2018"
+      },
+      {
+        tipoFalta: "Ausencia sin aviso",
+        fecha: "07/02/2018"
+      },
+    ],
+    tipoLicencia:
+    [
+      {
+        tipoLicencia: "Licencia anual extraordinaria - Inicio",
+        fecha: "12/02/2018"
+      },
+      {
+        tipoLicencia: "Licencia anual extraordinaria - Final",
+        fecha: "18/02/2018"
+      }
+    ],
+    tipoPresente:
+    [
+      {
+        tipoPresente: "Presente",
+        fecha: "02/02/2017"
+      },
+      {
+        tipoPresente: "Presente",
+        fecha: "05/02/2017"
+      },
+      {
+        tipoPresente: "Presente con llegada tarde",
+        fecha: "08/02/2017"
+      },
+      {
+        tipoPresente: "Presente",
+        fecha: "01/02/2017"
+      },
+      {
+        tipoPresente: "Presente con llegada tarde",
+        fecha: "09/02/2017"
+      }
+    ]
+  }
+]

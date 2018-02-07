@@ -5,5 +5,9 @@
 }
 
 mat-form-field{
-    
+    margin: 0px;
+}
+
+.th-text{
+    text-align: left;
 }

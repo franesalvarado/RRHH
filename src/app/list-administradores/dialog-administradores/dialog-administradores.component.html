@@ -2,26 +2,39 @@
   <mat-tab label="General">
     <h2 mat-dialog-title>Datos</h2>
     <div class="demo-tab-content">
-      <p>
-        Nombre:
-        <mat-form-field><input matInput value="Sushi"></mat-form-field>
-      </p>
-      <p>
-        Legajo: 
-        <mat-form-field><input matInput value="Sushi"></mat-form-field>
-      </p>
-      <p>
-        Area: 
-      <mat-form-field><input matInput value="Sushi"></mat-form-field>
-      </p>
+    <table>
+      <tr>
+        <th>Nombre:</th>
+        <th><mat-form-field><input matInput value="{{data.nombre}}"></mat-form-field></th>
+      </tr>
+      <tr>
+        <th>Legajo:</th>
+        <th><mat-form-field><input matInput value="{{data.legajo}}"></mat-form-field></th>
+      </tr>
+      <tr>
+        <th>Area:</th>
+        <th><mat-form-field><input matInput value="Sushi"></mat-form-field></th>
+      </tr>
+    </table>
     </div>
   </mat-tab>
   <mat-tab label="Usuario">
     <h2 mat-dialog-title>Usuario</h2>
     <div class="demo-tab-content">
-      <p>Usuario: Patricio</p>
-      <p>Acceso al sistema: Patricio</p>
-      <p>Privilegio: Patricio</p>
+    <table>
+      <tr>
+        <th>Usuario:</th>
+        <th><mat-form-field><input matInput value="{{data.usuario}}"></mat-form-field></th>
+      </tr>
+      <tr>
+        <th>Privilegio:</th>
+        <th><mat-form-field><input matInput value="{{data.tipoUsuario}}"></mat-form-field></th>
+      </tr>
+      <tr>
+        <th>Bloqueado:</th>
+        <th><mat-form-field><input matInput value="Sushi"></mat-form-field></th>
+      </tr>
+    </table>
     </div>
   </mat-tab>
 </mat-tab-group>

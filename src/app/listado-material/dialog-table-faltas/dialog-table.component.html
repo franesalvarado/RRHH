@@ -1,15 +1,17 @@
 <div class="contenedor-principal">
-  <h2 mat-dialog-title>{{data.name}}</h2>
+  <h2>{{data.name}}</h2>
+  <h4>Carga de faltas</h4>
   <hr>
   <mat-dialog-content>
-  <form>
-    <mat-form-field class="formDeEleccion">
-      <input type="text" placeholder="Selecciona una opcion..." aria-label="Number" matInput [formControl]='myControl' [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{ option }}
-        </mat-option>
-      </mat-autocomplete>
+  Seleccione una opcion de la lista...
+  <form>  
+    <mat-form-field>
+      <mat-select [(value)]="selected" [disabled]="false">
+          <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
+          <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
+          <mat-option value="Presente">Presente</mat-option>
+          <mat-option value="Presente con llegada tarde">Presente con llegada tarde</mat-option>
+      </mat-select>
     </mat-form-field>
    </form>
 
