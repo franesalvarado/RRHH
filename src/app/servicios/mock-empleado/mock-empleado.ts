@@ -27,51 +27,55 @@ export const EMPLEADOS: Empleado[] = [
 
 export const EMPLEADOSFALTAS: EmpleadoFaltas[]= [
   {
-    legajo: 51268,
+    legajo: 51628,
     tipoFalta:
     [
       {
         tipoFalta: "Ausencia con aviso",
-        fecha: "06/02/2018"
+        fecha: "2018/01/29T00:00:00"
+      },
+      {
+        tipoFalta: "Presente",
+        fecha: "2018/01/30T00:00:00"
+      },
+      {
+        tipoFalta: "Presente con llegada tarde",
+        fecha: "2018/01/31T00:00:00"
+      },
+      {
+        tipoFalta: "Licencia por enfermedad",
+        fecha: "2018/02/01T00:00:00"
+      },
+      {
+        tipoFalta: "Licencia por enfermedad",
+        fecha: "2018/02/02T00:00:00"
+      }
+    ]
+  },
+  {
+    legajo: 81621,
+    tipoFalta:
+    [
+      {
+        tipoFalta: "Presente",
+        fecha: "2018/01/29T00:00:00"
       },
       {
         tipoFalta: "Ausencia sin aviso",
-        fecha: "07/02/2018"
-      },
-    ],
-    tipoLicencia:
-    [
-      {
-        tipoLicencia: "Licencia anual extraordinaria - Inicio",
-        fecha: "12/02/2018"
+        fecha: "2018/01/30T00:00:00"
       },
       {
-        tipoLicencia: "Licencia anual extraordinaria - Final",
-        fecha: "18/02/2018"
-      }
-    ],
-    tipoPresente:
-    [
-      {
-        tipoPresente: "Presente",
-        fecha: "02/02/2017"
+        tipoFalta: "Presente con llegada tarde",
+        fecha: "2018/01/31T00:00:00"
       },
       {
-        tipoPresente: "Presente",
-        fecha: "05/02/2017"
+        tipoFalta: "Presente",
+        fecha: "2018/02/01T00:00:00"
       },
       {
-        tipoPresente: "Presente con llegada tarde",
-        fecha: "08/02/2017"
-      },
-      {
-        tipoPresente: "Presente",
-        fecha: "01/02/2017"
-      },
-      {
-        tipoPresente: "Presente con llegada tarde",
-        fecha: "09/02/2017"
+        tipoFalta: "Presente",
+        fecha: "2018/02/02T00:00:00"
       }
     ]
-  }
+  },
 ]

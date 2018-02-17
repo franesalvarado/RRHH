@@ -62,12 +62,15 @@ export class ListadoMaterialComponent implements OnInit {
     });
   }
 
+
+  // Filtro de busqueda del table
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.trim(); // Quita los espacio en blanco
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
 
+  // Cuando cliqueas una fila...
   selectRow(value) {
     this.openDialog(value);
     console.log(value);

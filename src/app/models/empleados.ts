@@ -11,19 +11,29 @@ export class Empleado{
 export class EmpleadoFaltas{
     legajo: number;
     tipoFalta: TipoFalta[];
-    tipoLicencia: TipoLicencia[];
-    tipoPresente: TipoPresente[];
 }
-            export class TipoFalta{
-            tipoFalta: string;
-            fecha: string;
-            }
-            export class TipoPresente{
-                tipoPresente: string;
-                fecha: string;
-            }
-            export class TipoLicencia{
-                tipoLicencia: string;
-                fecha: string;
-            }
 
+    export class TipoFalta{
+        tipoFalta: string;
+        fecha: string;
+    }
+    
+    export class TipoPresente{
+        tipoPresente: string;
+        fecha: string;
+    }
+    export class TipoLicencia{
+        tipoLicencia: string;
+        fecha: string;
+    }
+
+    
+export class EmpleadoFaltasNoMock{
+        legajo: number;
+        tipoFaltaNoMock: TipoFalta[];
+    }
+
+    export class tipoFaltaNoMock{
+        tipoFalta: string;
+        fecha: Date;
+    }
