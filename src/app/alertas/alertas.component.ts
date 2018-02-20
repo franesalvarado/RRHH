@@ -4,6 +4,7 @@ import { Empleado } from '../models/empleados';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material';
+import { DialogAlertasComponent } from './dialog-alertas/dialog-alertas.component';
 
 @Component({
   selector: 'app-alertas',
@@ -34,4 +35,22 @@ export class AlertasComponent implements OnInit {
     }
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
   }
+
+    // Cuando cliqueas una fila...
+    selectRow(value) {
+      this.openDialog(value);
+      console.log(value);
+    }
+  
+    openDialog(value) {
+      const dialogRef = this.dialog.open(DialogAlertasComponent, {
+        width: '600px',
+        data: value
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog closed: ` + result);
+        this.dialogResult = result;
+      });
+    }
 }

@@ -40,11 +40,15 @@
         <!-- confirmado Column -->
         <ng-container matColumnDef="confirmado">
           <mat-header-cell *matHeaderCellDef> Confirmado </mat-header-cell>
-          <mat-cell *matCellDef="let element"> <i class="material-icons">{{element.confirmado}}</i> </mat-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="material-icons" *ngIf="element.confirmado; else elseBlock">check_circle</i>
+            <ng-template #elseBlock><i class="material-icons">error_outline</i></ng-template>
+          
+          </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"  [style.background]="row.color" ></mat-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)" [style.background]="row.color" ></mat-row>
       </mat-table>
       </div>
     </div>

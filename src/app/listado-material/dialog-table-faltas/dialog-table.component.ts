@@ -5,7 +5,6 @@ import { Empleado, TipoFalta, TipoPresente } from '../../models/empleados';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
-import { timer } from 'rxjs/observable/timer';
 import { map, take } from 'rxjs/operators';
 
 @Component({
@@ -22,18 +21,11 @@ export class DialogTableComponent implements OnInit {
   tipoFalta: TipoFalta;
   tipoPresente: TipoPresente;
 
-  countDown;
-  count = 60;
 
 
   constructor(public thisDialogRef: MatDialogRef<DialogTableComponent>, 
               @Inject(MAT_DIALOG_DATA) public data: Empleado) 
-  { 
-    this.countDown = timer(0,1000).pipe(
-      take(this.count),
-      map(()=> --this.count)
-    );
-  }
+  {}
 
   ngOnInit() {
   }

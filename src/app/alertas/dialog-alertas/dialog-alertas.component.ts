@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Empleado } from '../../models/empleados';
 
 @Component({
   selector: 'app-dialog-alertas',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAlertasComponent implements OnInit {
 
-  constructor() { }
+  constructor(public thisDialogRef: MatDialogRef<DialogAlertasComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: Empleado) { }
 
   ngOnInit() {
   }
-
+  
+  onCloseCancel() {
+    this.thisDialogRef.close('Cancel');
+  }
 }

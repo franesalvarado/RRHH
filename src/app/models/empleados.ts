@@ -3,6 +3,7 @@ export class Empleado{
     name: string;
     legajo: number;
     tipoContrato: string;
+    confirmado: boolean;
     cantFaltasMensual: number;
     cantFaltasTotal: number;
     cantRestVacaciones: number;
