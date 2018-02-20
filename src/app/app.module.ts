@@ -9,7 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './commons/material.module';
 import { NgPrimeModule } from './commons/ngprime.module';
 
-// Imports de rutas
+// Pipes
+
   // Import de Dialog
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -43,7 +44,6 @@ const routes: Routes = [
   { path: 'administradores', component: ListAdministradoresComponent },
   { path: 'directores', component: ListDirectoresComponent },
   { path: 'personal-rrhh', component: ListPersonalRrhhComponent }
-  
 ];
 
 @NgModule({

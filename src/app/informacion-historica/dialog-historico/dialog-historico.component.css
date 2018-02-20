@@ -5,3 +5,12 @@
   .demo-tab-content {
     padding: 16px;
   }
+
+  .mat-header-row{
+    background-color: #e4e4e4;
+  }
+
+  
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}

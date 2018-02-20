@@ -25,30 +25,30 @@ export const EMPLEADOS: Empleado[] = [
   {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado',
   cantFaltasMensual: 0, cantFaltasTotal: 3, cantRestVacaciones: 28}];
 
-export const EMPLEADOSFALTAS: EmpleadoFaltas[]= [
+export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
   {
     legajo: 51628,
     tipoFalta:
     [
       {
         tipoFalta: "Ausencia con aviso",
-        fecha: "2018/01/29T00:00:00"
+        fecha: "2018/1/29"
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/01/30T00:00:00"
+        fecha: "2018/1/30"
       },
       {
         tipoFalta: "Presente con llegada tarde",
-        fecha: "2018/01/31T00:00:00"
+        fecha: "2018/1/31"
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/02/01T00:00:00"
+        fecha: "2018/2/1"
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/02/02T00:00:00"
+        fecha: "2018/2/2"
       }
     ]
   },
@@ -58,23 +58,23 @@ export const EMPLEADOSFALTAS: EmpleadoFaltas[]= [
     [
       {
         tipoFalta: "Presente",
-        fecha: "2018/01/29T00:00:00"
+        fecha: "2018/1/2"
       },
       {
         tipoFalta: "Ausencia sin aviso",
-        fecha: "2018/01/30T00:00:00"
+        fecha: "2018/1/30"
       },
       {
         tipoFalta: "Presente con llegada tarde",
-        fecha: "2018/01/31T00:00:00"
+        fecha: "2018/1/31"
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/02/01T00:00:00"
+        fecha: "2018/2/1"
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/02/02T00:00:00"
+        fecha: "2018/2/2"
       }
     ]
   },
