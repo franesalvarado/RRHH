@@ -6,7 +6,7 @@
   Seleccione una opcion de la lista...
   <form>  
   <mat-form-field>   
-  <mat-select [(value)]="selected" [disabled]="true" *ngIf="data.confirmado; else elseBlock">
+  <mat-select [(value)]="selectedConfirm" [disabled]="true" *ngIf="data.confirmado; else elseBlock">
       <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
       <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
       <mat-option value="Presente">Presente</mat-option>

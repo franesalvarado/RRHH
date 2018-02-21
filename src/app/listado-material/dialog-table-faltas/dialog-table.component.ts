@@ -18,6 +18,7 @@ export class DialogTableComponent implements OnInit {
   dataDialog;
   filteredOptions: Observable<string[]>;
   selected = "Ausencia sin aviso";
+  selectedConfirm = "Presente";
   tipoFalta: TipoFalta;
   tipoPresente: TipoPresente;
 
