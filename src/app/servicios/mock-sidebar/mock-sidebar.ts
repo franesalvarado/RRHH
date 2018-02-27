@@ -54,12 +54,41 @@ export const SIDENAVADMINGLOBAL: SidenavDirector = {
     buttonsOpciones:
         [{
             nombre: "Agentes excedidos de ausentismo",
-            routerLink: "informacion-historica",
+            routerLink: "",
             icon: "timeline"
         },
         {
             nombre: "Agentes excedidos de licencia",
-            routerLink: "alertas",
+            routerLink: "",
+            icon: "new_releases"
+        }
+        ]
+}
+
+export const SIDENAVADMIN: SidenavDirector = {
+    accordionNombre: "Listado de usuarios",
+    accordionOpciones:
+        [{
+            nombre: "Agregar Usuario",
+            routerLink: "new-usuarios"
+        },
+        {
+            nombre: "Directores",
+            routerLink: "directores"
+        },
+        {
+            nombre: "Personal RRHH",
+            routerLink: "personal-rrhh"
+        }],
+    buttonsOpciones:
+        [{
+            nombre: "Agentes excedidos de ausentismo",
+            routerLink: "",
+            icon: "timeline"
+        },
+        {
+            nombre: "Agentes excedidos de licencia",
+            routerLink: "",
             icon: "new_releases"
         }
         ]

@@ -9,12 +9,14 @@ import { Empleado } from '../../models/empleados';
 })
 export class DialogListDirectoresComponent implements OnInit {
   dataDialog;
-  selected; 
+  selected:string;
+  selectedPrivilegio:string;
   constructor(public thisDialogRef: MatDialogRef<DialogListDirectoresComponent>, 
               @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
     this.selected = this.data.area;
+    this.selectedPrivilegio = "Director/a";
   }
 
   onCloseConfirm() {

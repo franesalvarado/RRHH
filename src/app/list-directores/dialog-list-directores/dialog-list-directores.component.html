@@ -34,7 +34,15 @@
       </tr>
       <tr>
         <td>Privilegio:</td>
-        <td><mat-form-field><input matInput value="{{data.tipoUsuario}}"></mat-form-field></td>
+        <td>
+          <mat-select [(value)]="selectedPrivilegio" [disabled]="false">
+              <mat-option value="Subdirector/a">Subdirector/a</mat-option>
+              <mat-option value="Director/a">Director/a</mat-option>
+              <mat-option value="Director/a General">Director/a General</mat-option>
+              <mat-option value="Subsecretario/a">Subsecretario/a</mat-option>
+              <mat-option value="Secretario/a">Secretario/a</mat-option>
+            </mat-select>
+        </td>
       </tr>
       <tr>
         <td>Bloqueado:</td>

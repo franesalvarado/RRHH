@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
   ) { 
     this.estadoBoolean=false;
     this.cssEstado="busquedaVisible";
-    this.tipoUsuario="AdminGlobal";
+    this.tipoUsuario="Admin";
   }
 
   ngOnInit(){
@@ -36,13 +36,19 @@ export class AppComponent implements OnInit{
       this.menuSidenavNombre = this._sidenavService.getSidenavDirector().accordionNombre;
       this.accordionOpciones = this._sidenavService.getSidenavDirector().accordionOpciones;
       this.buttonsOpciones = this._sidenavService.getSidenavDirector().buttonsOpciones;
-      this.direccion="Direccion de Gestion Informatizada"
+      this.direccion="Direccion de Gestion Informatizada";
     }else 
       if(this.tipoUsuario == "AdminGlobal"){
       this.menuSidenavNombre = this._sidenavService.getSidenavAdminGlobal().accordionNombre;
       this.accordionOpciones = this._sidenavService.getSidenavAdminGlobal().accordionOpciones;
       this.buttonsOpciones = this._sidenavService.getSidenavAdminGlobal().buttonsOpciones;
-      this.direccion="Administracion General del Sistema"
+      this.direccion="Administracion General del Sistema";
+    }else{
+      if(this.tipoUsuario == "Admin"){
+        this.menuSidenavNombre = this._sidenavService.getSidenavAdmin().accordionNombre;
+        this.accordionOpciones = this._sidenavService.getSidenavAdmin().accordionOpciones;
+        this.buttonsOpciones = this._sidenavService.getSidenavAdmin().buttonsOpciones;
+        this.direccion="Administracion del Sistema";
     }
     this.cantAlertas = 0;
     for (let i in this.empleados) {
@@ -51,15 +57,5 @@ export class AppComponent implements OnInit{
       }
     }
   }
-
-  estadoBotonBusqueda(){
-    if (this.estadoBoolean=true){
-      this.cssEstado="busquedaVisible";
-      this.estadoBoolean=false;
-    }
-    else{
-      this.cssEstado="busquedaOculta";
-      this.estadoBoolean=true;
-    }
   }
 }
