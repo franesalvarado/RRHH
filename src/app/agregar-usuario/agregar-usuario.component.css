@@ -1,0 +1,19 @@
+.content-table{
+    position: relative;
+    width: 90%;
+    left: 5%;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    height: 50px;
+    text-align: right;
+}
+
+
+td > * {
+    width: 100%;
+  }

@@ -10,11 +10,15 @@ import { Empleado } from '../../models/empleados';
 })
 export class DialogListPersonalRrhhComponent implements OnInit {
   dataDialog;
+  selectedDireccion:string;
+  selectedPrivilegio:string;
   
   constructor(public thisDialogRef: MatDialogRef<DialogListPersonalRrhhComponent>, 
-              @Inject(MAT_DIALOG_DATA) public data: Empleado) { }
+              @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
+    this.selectedDireccion = "Direccion General de Recursos Humanos";
+    this.selectedPrivilegio = this.data.funcion;
   }
 
   onCloseConfirm() {

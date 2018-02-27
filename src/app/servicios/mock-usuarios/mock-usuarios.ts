@@ -42,14 +42,14 @@ export const PERSONALRRHH: UsuarioRRHH[] = [
         usuario: "dlebon",
         legajo: 51230,
         tipoUsuario: "RRHH",
-        funcion: "Vacaciones"
+        funcion: "Licencia Medica"
     },
     {
         nombre: "Oscar Moro",
         usuario: "omoro",
         legajo: 81633,
         tipoUsuario: "RRHH",
-        funcion: "Enfermedad"
+        funcion: "Licencia Anual Extraordinaria"
     }
 ];
 
