@@ -9,11 +9,14 @@ import { Empleado } from '../../models/empleados';
 })
 export class DialogAdministradoresComponent implements OnInit {
   dataDialog;
+  selected: string;
+
 
   constructor(public thisDialogRef: MatDialogRef<DialogAdministradoresComponent>, 
               @Inject(MAT_DIALOG_DATA) public data) { }
   ngOnInit() {
     console.log(this.data);
+    this.selected = this.data.tipoUsuario;
   }
 
 

@@ -4,16 +4,21 @@
     <div class="demo-tab-content">
     <table>
       <tr>
-        <th>Nombre:</th>
-        <th><mat-form-field><input matInput value="{{data.nombre}}"></mat-form-field></th>
+        <td>Nombre:</td>
+        <td><mat-form-field><input matInput value="{{data.nombre}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Legajo:</th>
-        <th><mat-form-field><input matInput value="{{data.legajo}}"></mat-form-field></th>
+        <td>Legajo:</td>
+        <td><mat-form-field><input matInput value="{{data.legajo}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Area:</th>
-        <th><mat-form-field><input matInput value="Sushi"></mat-form-field></th>
+        <td>Area:</td>
+        <td>          
+          <mat-select [(value)]="selected" [disabled]="false">
+            <mat-option value="Admin">Dirección de Gestion Informatizada</mat-option>
+            <mat-option value="AdminGlobal">Dirección General de Recursos Humanos</mat-option>
+         </mat-select>
+        </td>
       </tr>
     </table>
     </div>
@@ -23,16 +28,21 @@
     <div class="demo-tab-content">
     <table>
       <tr>
-        <th>Usuario:</th>
-        <th><mat-form-field><input matInput value="{{data.usuario}}"></mat-form-field></th>
+        <td>Usuario:</td>
+        <td><mat-form-field><input matInput value="{{data.usuario}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Privilegio:</th>
-        <th><mat-form-field><input matInput value="{{data.tipoUsuario}}"></mat-form-field></th>
+        <td>Privilegio:</td>
+        <td>    
+          <mat-select [(value)]="selected" [disabled]="false">
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="AdminGlobal">Admin Global</mat-option>
+         </mat-select>
+        </td>
       </tr>
       <tr>
-        <th>Bloqueado:</th>
-        <th><mat-form-field><input matInput value="Sushi"></mat-form-field></th>
+        <td>Bloqueado:</td>
+        <td><mat-slide-toggle></mat-slide-toggle></td>
       </tr>
     </table>
     </div>

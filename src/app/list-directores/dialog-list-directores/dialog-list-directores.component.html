@@ -4,16 +4,22 @@
     <div class="demo-tab-content">
     <table>
       <tr>
-        <th>Nombre:</th>
-        <th><mat-form-field><input matInput value="{{data.nombre}}"></mat-form-field></th>
+        <td>Nombre:</td>
+        <td><mat-form-field><input matInput value="{{data.nombre}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Legajo:</th>
-        <th><mat-form-field><input matInput value="{{data.legajo}}"></mat-form-field></th>
+        <td>Legajo:</td>
+        <td><mat-form-field><input matInput value="{{data.legajo}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Area:</th>
-        <th><mat-form-field><input matInput value="{{data.area}}"></mat-form-field></th>
+        <td>Area:</td>
+        <td>         
+          <mat-select [(value)]="selected" [disabled]="false">
+            <mat-option value="Direccion de Bromatologia">Direccion de Bromatologia</mat-option>
+            <mat-option value="Subsecretaria de Seguridad">Subsecretaria de Seguridad</mat-option>
+            <mat-option value="Direccion de Administracion">Direccion de Administracion</mat-option>
+          </mat-select>
+      </td>
       </tr>
     </table>
     </div>
@@ -23,16 +29,16 @@
     <div class="demo-tab-content">
     <table>
       <tr>
-        <th>Usuario:</th>
-        <th><mat-form-field><input matInput value="{{data.usuario}}"></mat-form-field></th>
+        <td>Usuario:</td>
+        <td><mat-form-field><input matInput value="{{data.usuario}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Privilegio:</th>
-        <th><mat-form-field><input matInput value="{{data.tipoUsuario}}"></mat-form-field></th>
+        <td>Privilegio:</td>
+        <td><mat-form-field><input matInput value="{{data.tipoUsuario}}"></mat-form-field></td>
       </tr>
       <tr>
-        <th>Bloqueado:</th>
-        <th><mat-form-field><input matInput value="sushi"></mat-form-field></th>
+        <td>Bloqueado:</td>
+        <td><mat-slide-toggle></mat-slide-toggle></td>
       </tr>
     </table>
     </div>

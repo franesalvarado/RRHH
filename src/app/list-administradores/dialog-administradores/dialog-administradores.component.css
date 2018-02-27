@@ -8,6 +8,7 @@ mat-form-field{
     margin: 0px;
 }
 
-.th-text{
-    text-align: left;
+td{
+    height: 70px;
+    vertical-align: center;
 }

@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
   ) { 
     this.estadoBoolean=false;
     this.cssEstado="busquedaVisible";
-    this.tipoUsuario="Director";
+    this.tipoUsuario="AdminGlobal";
   }
 
   ngOnInit(){
