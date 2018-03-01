@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Imports de Material - Ng
-import { MaterialModule } from './commons/material.module';
-import { NgPrimeModule } from './commons/ngprime.module';
+import { MaterialModule } from './libreria/commons/material.module';
+import { NgPrimeModule } from './libreria/commons/ngprime.module';
 
 // Pipes
 
@@ -15,7 +15,7 @@ import { NgPrimeModule } from './commons/ngprime.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
   import { DialogCambiarClaveComponent } from './dialogs-app.component/dialog-cambiar-clave/dialog-cambiar-clave.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './libreria/login/login.component';
 // Director
 import { ListadoMaterialComponent } from './director/listado-material/listado-material.component';
   import { DialogTableComponent } from './director/listado-material/dialog-table-faltas/dialog-table.component';

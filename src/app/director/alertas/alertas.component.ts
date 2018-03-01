@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpleadoService } from '../servicios/empleado.service';
-import { Empleado } from '../models/empleados';
+import { EmpleadoService } from '../../libreria/servicios/empleado.service';
+import { Empleado } from '../../libreria/models/empleados';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material';

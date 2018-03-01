@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { MatDialog } from '@angular/material';
-import { Empleado } from '../models/empleados';
+import { Empleado } from '../../libreria/models/empleados';
 import { DataSource } from '@angular/cdk/collections';
 import { DialogHistoricoComponent } from './dialog-historico/dialog-historico.component';
-import { EmpleadoService } from '../servicios/empleado.service';
+import { EmpleadoService } from '../../libreria/servicios/empleado.service';
 
 @Component({
   selector: 'app-informacion-historica',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { EmpleadoService } from '../servicios/empleado.service';
-import { Empleado } from '../models/empleados';
+import { EmpleadoService } from '../../libreria/servicios/empleado.service';
+import { Empleado } from '../../libreria/models/empleados';
 import { MatTableDataSource } from '@angular/material';
 import { MatDialog } from '@angular/material';
 

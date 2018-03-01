@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { EmpleadoService } from '../../servicios/empleado.service';
+import { EmpleadoService } from '../../../libreria/servicios/empleado.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
 import { map } from 'rxjs/operators/map';
-import { EmpleadoFaltas, EmpleadoFaltasNoMock, tipoFaltaNoMock, TipoFalta } from '../../models/empleados';
+import { EmpleadoFaltas, EmpleadoFaltasNoMock, tipoFaltaNoMock, TipoFalta } from '../../../libreria/models/empleados';
 import { DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { DatePipe } from '@angular/common';

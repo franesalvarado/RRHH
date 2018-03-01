@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioListService } from '../servicios/usuarios-list.service';
+import { UsuarioListService } from '../../libreria/servicios/usuarios-list.service';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
 

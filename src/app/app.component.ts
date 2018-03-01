@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpleadoService } from './servicios/empleado.service';
-import { SidenavService } from './servicios/sidebar.services';
-import { accordionOption, buttonsOption } from './models/sidebar';
+import { EmpleadoService } from './libreria/servicios/empleado.service';
+import { SidenavService } from './libreria/servicios/sidebar.services';
+import { accordionOption, buttonsOption } from './libreria/models/sidebar';
 
 import { MatDialog } from '@angular/material';
 import { DialogCambiarClaveComponent } from './dialogs-app.component/dialog-cambiar-clave/dialog-cambiar-clave.component';
