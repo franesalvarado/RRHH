@@ -28,7 +28,7 @@
               <span>Francisco Alvarado</span>
             </button>
             <mat-menu #menuPersonal="matMenu">
-              <button mat-menu-item>
+              <button mat-menu-item (click)="onCambiarClave()">
                   <mat-icon>fingerprint</mat-icon>
                   <span>Cambiar contraseña</span>
               </button>

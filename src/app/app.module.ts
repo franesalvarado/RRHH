@@ -14,6 +14,7 @@ import { NgPrimeModule } from './commons/ngprime.module';
   // Import de Dialog
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+  import { DialogCambiarClaveComponent } from './dialogs-app.component/dialog-cambiar-clave/dialog-cambiar-clave.component';
 import { LoginComponent } from './login/login.component';
 import { ListadoMaterialComponent } from './listado-material/listado-material.component';
   import { DialogTableComponent } from './listado-material/dialog-table-faltas/dialog-table.component';
@@ -62,7 +63,8 @@ const routes: Routes = [
     DialogAdministradoresComponent,
     DialogAlertasComponent,
     DialogListDirectoresComponent,
-    DialogListPersonalRrhhComponent
+    DialogListPersonalRrhhComponent,
+    DialogCambiarClaveComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +82,8 @@ const routes: Routes = [
     DialogAdministradoresComponent,
     DialogAlertasComponent,
     DialogListDirectoresComponent,
-    DialogListPersonalRrhhComponent
+    DialogListPersonalRrhhComponent,
+    DialogCambiarClaveComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
