@@ -9,13 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './libreria/commons/material.module';
 import { NgPrimeModule } from './libreria/commons/ngprime.module';
 
-// Pipes
-
-  // Import de Dialog
+// Router
 import { Routes, RouterModule } from '@angular/router';
+
+// AppComponent
 import { AppComponent } from './app.component';
   import { DialogCambiarClaveComponent } from './dialogs-app.component/dialog-cambiar-clave/dialog-cambiar-clave.component';
 import { LoginComponent } from './libreria/login/login.component';
+
 // Director
 import { ListadoMaterialComponent } from './director/listado-material/listado-material.component';
   import { DialogTableComponent } from './director/listado-material/dialog-table-faltas/dialog-table.component';
@@ -23,7 +24,8 @@ import { InformacionHistoricaComponent } from './director/informacion-historica/
   import { DialogHistoricoComponent } from './director/informacion-historica/dialog-historico/dialog-historico.component';
 import { AlertasComponent } from './director/alertas/alertas.component';
   import { DialogAlertasComponent } from './director/alertas/dialog-alertas/dialog-alertas.component';
-//Administrador - AdminGlobal
+
+// Administrador - AdminGlobal
 import { ListAdministradoresComponent } from './adminglobal-admin/list-administradores/list-administradores.component';
   import { DialogAdministradoresComponent } from './adminglobal-admin/list-administradores/dialog-administradores/dialog-administradores.component';
 import { ListDirectoresComponent } from './adminglobal-admin/list-directores/list-directores.component';
@@ -32,6 +34,12 @@ import { ListPersonalRrhhComponent } from './adminglobal-admin/list-personal-rrh
   import { DialogListPersonalRrhhComponent } from './adminglobal-admin/list-personal-rrhh/dialog-list-personal-rrhh/dialog-list-personal-rrhh.component';
 import { AgregarUsuarioComponent } from './adminglobal-admin/agregar-usuario/agregar-usuario.component';
 
+// Personal de Recursos Humanos
+import { CargarLicenciaAnualComponent } from './personal-rrhh/cargar-licencia-anual/cargar-licencia-anual.component';
+import { CargarLicenciaMedicaComponent } from './personal-rrhh/cargar-licencia-medica/cargar-licencia-medica.component';
+import { CargarArtComponent } from './personal-rrhh/cargar-art/cargar-art.component';
+import { ModificarFaltasComponent } from './personal-rrhh/modificar-faltas/modificar-faltas.component';
+
 
 
 const routes: Routes = [
@@ -39,14 +47,21 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   // Se cargan las rutas
   { path: 'login', component: LoginComponent },
+  // Directores
   { path: 'listado-material', component: ListadoMaterialComponent },
   { path: 'listado-material/:page', component: ListadoMaterialComponent },
   { path: 'informacion-historica', component: InformacionHistoricaComponent },
   { path: 'alertas', component: AlertasComponent },
+  // Admin Global - Admin
   { path: 'new-usuarios', component: AgregarUsuarioComponent },
   { path: 'administradores', component: ListAdministradoresComponent },
   { path: 'directores', component: ListDirectoresComponent },
-  { path: 'personal-rrhh', component: ListPersonalRrhhComponent }
+  { path: 'personal-rrhh', component: ListPersonalRrhhComponent },
+  // Personal de Recursos Humanos
+  { path: 'cargar-anual', component: CargarLicenciaAnualComponent },
+  { path: 'cargar-medica', component: CargarLicenciaMedicaComponent },
+  { path: 'cargar-art', component: CargarArtComponent },
+  { path: 'modificar-faltas', component: ModificarFaltasComponent }
 ];
 
 @NgModule({
@@ -66,7 +81,11 @@ const routes: Routes = [
     DialogAlertasComponent,
     DialogListDirectoresComponent,
     DialogListPersonalRrhhComponent,
-    DialogCambiarClaveComponent
+    DialogCambiarClaveComponent,
+    CargarLicenciaAnualComponent,
+    CargarLicenciaMedicaComponent,
+    CargarArtComponent,
+    ModificarFaltasComponent
   ],
   imports: [
     BrowserModule,
