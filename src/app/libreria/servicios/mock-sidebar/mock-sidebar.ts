@@ -1,4 +1,4 @@
-import { SidenavDirector, accordionOption, buttonsOption } from '../../models/sidebar';
+import { SidenavDirector, accordionOption, buttonsOption, SidenavRRHH } from '../../models/sidebar';
 export const SIDENAVDIRECTOR: SidenavDirector = {
     accordionNombre: "Listado del Personal",
     accordionOpciones: 
@@ -33,7 +33,7 @@ export const SIDENAVDIRECTOR: SidenavDirector = {
 }
 
 export const SIDENAVADMINGLOBAL: SidenavDirector = {
-    accordionNombre: "Listado de usuarios",
+    accordionNombre: "Opciones de usuarios",
     accordionOpciones:
         [{
             nombre: "Agregar Usuario",
@@ -66,7 +66,7 @@ export const SIDENAVADMINGLOBAL: SidenavDirector = {
 }
 
 export const SIDENAVADMIN: SidenavDirector = {
-    accordionNombre: "Listado de usuarios",
+    accordionNombre: "Opciones de usuarios",
     accordionOpciones:
         [{
             nombre: "Agregar Usuario",
@@ -90,6 +90,32 @@ export const SIDENAVADMIN: SidenavDirector = {
             nombre: "Agentes excedidos de licencia",
             routerLink: "",
             icon: "new_releases"
+        }
+        ]
+}
+
+
+export const SIDENAVRRHHGLOBAL: SidenavRRHH = {
+    buttonsOpciones:
+        [{
+            nombre: "Cargar licencia anual",
+            routerLink: "cargar-anual",
+            icon: "flight_takeoff"
+        },
+        {
+            nombre: "Cargar licencia medica",
+            routerLink: "cargar-medica",
+            icon: "pregnant_woman"
+        },
+        {
+            nombre: "Cargar ART",
+            routerLink: "cargar-art",
+            icon: "add_alert"
+        },
+        {
+            nombre: "Modificar faltas",
+            routerLink: "modificar-faltas",
+            icon: "loop"
         }
         ]
 }

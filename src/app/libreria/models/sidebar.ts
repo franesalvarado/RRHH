@@ -14,3 +14,7 @@ export class SidenavDirector {
     accordionOpciones: accordionOption[];
     buttonsOpciones: buttonsOption[];
 }
+
+export class SidenavRRHH{
+    buttonsOpciones: buttonsOption[];
+}

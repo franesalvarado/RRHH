@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SIDENAVDIRECTOR, SIDENAVADMINGLOBAL, SIDENAVADMIN } from './mock-sidebar/mock-sidebar';
+import { SIDENAVDIRECTOR, SIDENAVADMINGLOBAL, SIDENAVADMIN, SIDENAVRRHHGLOBAL } from './mock-sidebar/mock-sidebar';
 
 @Injectable()
 export class SidenavService {
@@ -13,5 +13,9 @@ export class SidenavService {
 
     getSidenavAdmin(){
         return SIDENAVADMIN;
+    }
+
+    getSidenavRRHHGLOBAL(){
+        return SIDENAVRRHHGLOBAL;
     }
 }
