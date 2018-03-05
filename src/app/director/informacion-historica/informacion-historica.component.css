@@ -3,6 +3,10 @@ mat-card{
     box-shadow: none;
   }
 
+mat-card-header{
+  height: 70%;
+}
+
   .example-container {
     display: flex;
     flex-direction: column;
