@@ -39,6 +39,10 @@ import { CargarLicenciaAnualComponent } from './personal-rrhh/cargar-licencia-an
 import { CargarLicenciaMedicaComponent } from './personal-rrhh/cargar-licencia-medica/cargar-licencia-medica.component';
 import { CargarArtComponent } from './personal-rrhh/cargar-art/cargar-art.component';
 import { ModificarFaltasComponent } from './personal-rrhh/modificar-faltas/modificar-faltas.component';
+import { DialogCargarArtComponent } from './dialog-cargar-art/dialog-cargar-art.component';
+import { DialogCargarLicenciaAnualComponent } from './dialog-cargar-licencia-anual/dialog-cargar-licencia-anual.component';
+import { DialogCargarLicenciaMedicaComponent } from './dialog-cargar-licencia-medica/dialog-cargar-licencia-medica.component';
+import { DialogModificarFaltasComponent } from './dialog-modificar-faltas/dialog-modificar-faltas.component';
 
 
 
@@ -85,7 +89,11 @@ const routes: Routes = [
     CargarLicenciaAnualComponent,
     CargarLicenciaMedicaComponent,
     CargarArtComponent,
-    ModificarFaltasComponent
+    ModificarFaltasComponent,
+    DialogCargarArtComponent,
+    DialogCargarLicenciaAnualComponent,
+    DialogCargarLicenciaMedicaComponent,
+    DialogModificarFaltasComponent
   ],
   imports: [
     BrowserModule,
