@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{data.name}}</h2></mat-card-title>
+    <mat-card-subtitle>Informacion detallada del agente</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-dialog-content>
+          <div class="mat-elevation-z8 example-container">
+              <mat-table #table [dataSource]="dataSource"
+               matSort matSortActive="fecha" matSortDirection="asc">
+                <!-- Position Column -->
+                <ng-container matColumnDef="fecha">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true"> Fecha </mat-header-cell>
+                  <mat-cell *matCellDef="let element" > {{element.fecha |  date:'MM/dd/yyyy'}} </mat-cell>
+                </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="tipoFalta">
+                  <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+              </div>
+      </mat-dialog-content> 
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
+  </mat-card-actions>
+</mat-card>

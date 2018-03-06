@@ -1,0 +1,61 @@
+<mat-tab-group class="demo-tab-group">
+  <mat-tab label="General">
+    <h2 mat-dialog-title>Datos</h2>
+    <div class="demo-tab-content">
+    <table>
+      <tr>
+        <td>Nombre:</td>
+        <td><mat-form-field><input matInput value="{{data.nombre}}"></mat-form-field></td>
+      </tr>
+      <tr>
+        <td>Legajo:</td>
+        <td><mat-form-field><input matInput value="{{data.legajo}}"></mat-form-field></td>
+      </tr>
+      <tr>
+        <td>Area:</td>
+        <td>         
+          <mat-select [(value)]="selected" [disabled]="false">
+            <mat-option value="Direccion de Bromatologia">Direccion de Bromatologia</mat-option>
+            <mat-option value="Subsecretaria de Seguridad">Subsecretaria de Seguridad</mat-option>
+            <mat-option value="Direccion de Administracion">Direccion de Administracion</mat-option>
+          </mat-select>
+      </td>
+      </tr>
+    </table>
+    </div>
+  </mat-tab>
+  <mat-tab label="Usuario">
+    <h2 mat-dialog-title>Usuario</h2>
+    <div class="demo-tab-content">
+    <table>
+      <tr>
+        <td>Usuario:</td>
+        <td><mat-form-field><input matInput value="{{data.usuario}}"></mat-form-field></td>
+      </tr>
+      <tr>
+        <td>Privilegio:</td>
+        <td>
+          <mat-select [(value)]="selectedPrivilegio" [disabled]="false">
+              <mat-option value="Subdirector/a">Subdirector/a</mat-option>
+              <mat-option value="Director/a">Director/a</mat-option>
+              <mat-option value="Director/a General">Director/a General</mat-option>
+              <mat-option value="Subsecretario/a">Subsecretario/a</mat-option>
+              <mat-option value="Secretario/a">Secretario/a</mat-option>
+            </mat-select>
+        </td>
+      </tr>
+      <tr>
+        <td>Bloqueado:</td>
+        <td><mat-slide-toggle></mat-slide-toggle></td>
+      </tr>
+    </table>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<mat-dialog-content>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click)="onCloseConfirm()">APLICAR</button>
+  <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
+</mat-dialog-actions>

@@ -1,0 +1,13 @@
+table{
+    width: 65%;
+    left: 10%;
+    position: relative;
+}
+
+td{
+    text-align: left;
+}
+
+td > * {
+    width: 100%;
+  }

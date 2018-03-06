@@ -1,0 +1,54 @@
+<div class="contenedor-outlet">
+  <mat-card>
+      <mat-card-header>
+        <mat-card-title><h1>Listado del Personal</h1></mat-card-title>
+        <mat-card-subtitle>En caso de faltar personal, comunicarse con la Direccion General de Recursos Humanos.</mat-card-subtitle>
+      </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="input-mat">
+            <input matInput (keyup)="applyFilter($event.target.value)"   placeholder="Busqueda rapida...">
+          </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+      <div class="mat-elevation-z8 example-container">
+      <mat-table #table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position" >
+          <mat-header-cell *matHeaderCellDef> Nro. </mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.position}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <!-- legajo Column -->
+        <ng-container matColumnDef="legajo">
+          <mat-header-cell *matHeaderCellDef> Legajo </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.legajo}} </mat-cell>
+        </ng-container>
+
+        <!-- tipoContrato Column -->
+        <ng-container matColumnDef="tipoContrato">
+          <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.tipoContrato}} </mat-cell>
+        </ng-container>
+
+        <!-- confirmado Column -->
+        <ng-container matColumnDef="confirmado">
+          <mat-header-cell *matHeaderCellDef> Confirmado </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="material-icons" *ngIf="element.confirmado; else elseBlock">check_circle</i>
+            <ng-template #elseBlock><i class="material-icons">error_outline</i></ng-template>
+          
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)" [style.background]="row.color" ></mat-row>
+      </mat-table>
+      </div>
+    </div>

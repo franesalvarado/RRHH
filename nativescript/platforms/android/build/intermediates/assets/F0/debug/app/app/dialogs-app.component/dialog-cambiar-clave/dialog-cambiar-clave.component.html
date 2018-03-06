@@ -1,0 +1,45 @@
+<div class="contenedor-principal">
+  <h2>Francisco Alvarado</h2>
+  <h4>Cambiar clave de ingreso</h4>
+  <hr>
+  <mat-dialog-content>
+  <form> 
+    <table>
+      <tr>
+        <td>
+          Ingrese clave actual:
+        </td>
+        <td>
+          <mat-form-field>
+              <input matInput placeholder="Su clave actual..." required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ingrese clave nueva:
+        </td>
+        <td>
+          <mat-form-field>
+              <input matInput placeholder="Ingrese clave nueva..." required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Reingrese clave nueva:
+        </td>
+        <td>
+          <mat-form-field>
+              <input matInput placeholder="Repita clave nueva" required>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+   </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
+    <button mat-raised-button (click)="onCloseCancel()">CANCELAR</button>
+  </mat-dialog-actions>
+</div>
