@@ -36,13 +36,13 @@ import { AgregarUsuarioComponent } from './adminglobal-admin/agregar-usuario/agr
 
 // Personal de Recursos Humanos
 import { CargarLicenciaAnualComponent } from './personal-rrhh/cargar-licencia-anual/cargar-licencia-anual.component';
+  import { DialogCargarLicenciaAnualComponent } from './personal-rrhh/cargar-licencia-anual/dialog-cargar-licencia-anual/dialog-cargar-licencia-anual.component';
 import { CargarLicenciaMedicaComponent } from './personal-rrhh/cargar-licencia-medica/cargar-licencia-medica.component';
+  import { DialogCargarLicenciaMedicaComponent } from './personal-rrhh/cargar-licencia-medica/dialog-cargar-licencia-medica/dialog-cargar-licencia-medica.component';
 import { CargarArtComponent } from './personal-rrhh/cargar-art/cargar-art.component';
+  import { DialogCargarArtComponent } from './personal-rrhh/cargar-art/dialog-cargar-art/dialog-cargar-art.component';
 import { ModificarFaltasComponent } from './personal-rrhh/modificar-faltas/modificar-faltas.component';
-import { DialogCargarArtComponent } from './dialog-cargar-art/dialog-cargar-art.component';
-import { DialogCargarLicenciaAnualComponent } from './dialog-cargar-licencia-anual/dialog-cargar-licencia-anual.component';
-import { DialogCargarLicenciaMedicaComponent } from './dialog-cargar-licencia-medica/dialog-cargar-licencia-medica.component';
-import { DialogModificarFaltasComponent } from './dialog-modificar-faltas/dialog-modificar-faltas.component';
+  import { DialogModificarFaltasComponent } from './personal-rrhh/modificar-faltas/dialog-modificar-faltas/dialog-modificar-faltas.component';
 
 
 
