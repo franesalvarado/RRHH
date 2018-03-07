@@ -16,6 +16,34 @@
         <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\nativescript-runtime-unspecified_030715e1e16a9da54188957bf0181872d757f268.jar" />
     </item>
     <item
+        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\nativescript\runtime\unspecified\jars\libs\binding-generator.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
+        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\binding-generator_4d5aebcb6c028f5ac2705f8beb0a4675c33e411f.jar" />
+    </item>
+    <item
+        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-support-v4-25.3.1_7ad1829a7cf3673b2fff0bbb5133487f6498ea0f.jar" />
+    </item>
+    <item
+        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-support-core-ui-25.3.1_47dcdd070c08fa77102c872580b6ead0ee07f3f5.jar" />
+    </item>
+    <item
+        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-appcompat-v7-25.3.1_ce6754deafd40e3fb466432d663d0e6a5db19dd9.jar" />
+    </item>
+    <item
         jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
         jumboMode="false"
         revision="25.0.2"
@@ -37,13 +65,6 @@
         <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-support-fragment-25.3.1_ab2648b5fd34ec8c851a2009621a23e759d4f810.jar" />
     </item>
     <item
-        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\nativescript\runtime\unspecified\jars\libs\binding-generator.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
-        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\binding-generator_4d5aebcb6c028f5ac2705f8beb0a4675c33e411f.jar" />
-    </item>
-    <item
         jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
         jumboMode="false"
         revision="25.0.2"
@@ -58,13 +79,6 @@
         <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-support-vector-drawable-25.3.1_cd8e34b2092435070ce80232cf8635b14634effa.jar" />
     </item>
     <item
-        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-support-v4-25.3.1_7ad1829a7cf3673b2fff0bbb5133487f6498ea0f.jar" />
-    </item>
-    <item
         jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\widgets-release\jars\classes.jar"
         jumboMode="false"
         revision="25.0.2"
@@ -72,25 +86,11 @@
         <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\intermediates-exploded-aar-widgets-release_269939195a7604ab8cfc50f425248240191906f3.jar" />
     </item>
     <item
-        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-support-core-ui-25.3.1_47dcdd070c08fa77102c872580b6ead0ee07f3f5.jar" />
-    </item>
-    <item
         jar="C:\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
         jumboMode="false"
         revision="25.0.2"
         sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
         <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\support-annotations-25.3.1_07cc1bdab6386cc71ca9e51c0b2d242e9420314e.jar" />
-    </item>
-    <item
-        jar="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\falvarado\Dropbox\test-ng\nativescript\platforms\android\build\intermediates\pre-dexed\F0\debug\com.android.support-appcompat-v7-25.3.1_ce6754deafd40e3fb466432d663d0e6a5db19dd9.jar" />
     </item>
 
 </items>
