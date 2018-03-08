@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     private _sidenavService: SidenavService
   ) {
     // Variable que recibe el tipo de usuario logueado
-    this.tipoUsuario = 'Director';
+    this.tipoUsuario = 'personal-rrhh';
   }
 
   ngOnInit() {
