@@ -112,7 +112,11 @@ const routes: Routes = [
     DialogAlertasComponent,
     DialogListDirectoresComponent,
     DialogListPersonalRrhhComponent,
-    DialogCambiarClaveComponent
+    DialogCambiarClaveComponent,
+    DialogCargarArtComponent,
+    DialogCargarLicenciaAnualComponent,
+    DialogCargarLicenciaMedicaComponent,
+    DialogModificarFaltasComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

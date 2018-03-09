@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-dialog-cargar-art',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogCargarArtComponent implements OnInit {
 
-  constructor() { }
+  constructor(public thisDialogRef: MatDialogRef<DialogCargarArtComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
   }
