@@ -32,22 +32,22 @@ export class CargarArtComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-      // Cuando cliqueas una fila...
-      selectRow(value) {
-        this.openDialog(value);
-        console.log(value);
-      }
-    
-      openDialog(value) {
-        const dialogRef = this.dialog.open(DialogCargarArtComponent, {
-          width: '600px',
-          data: value
-        });
-    
-        dialogRef.afterClosed().subscribe(result => {
-          console.log(`Dialog closed: ` + result);
-          this.dialogResult = result;
-        });
-      }
+  // Cuando cliqueas una fila...
+  selectRow(value) {
+    this.openDialog(value);
+    console.log(value);
+  }
+
+  openDialog(value) {
+    const dialogRef = this.dialog.open(DialogCargarArtComponent, {
+      width: '600px',
+      data: value
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog closed: ` + result);
+      this.dialogResult = result;
+    });
+  }
 
 }

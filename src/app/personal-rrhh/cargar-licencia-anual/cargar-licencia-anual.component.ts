@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { Empleado } from '../../libreria/models/empleados';
 import { DataSource } from '@angular/cdk/collections';
 import { EmpleadoService } from '../../libreria/servicios/empleado.service';
+import { DialogCargarLicenciaAnualComponent } from './dialog-cargar-licencia-anual/dialog-cargar-licencia-anual.component';
 
 @Component({
   selector: 'app-cargar-licencia-anual',
@@ -31,4 +32,23 @@ export class CargarLicenciaAnualComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
+  // Cuando cliqueas una fila...
+  selectRow(value) {
+    this.openDialog(value);
+    console.log(value);
+  }
+
+  openDialog(value) {
+    const dialogRef = this.dialog.open(DialogCargarLicenciaAnualComponent, {
+      width: '600px',
+      data: value
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog closed: ` + result);
+      this.dialogResult = result;
+    });
+  }
+
+  
 }

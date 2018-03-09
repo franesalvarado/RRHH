@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material';
 import { Empleado } from '../../libreria/models/empleados';
 import { DataSource } from '@angular/cdk/collections';
 import { EmpleadoService } from '../../libreria/servicios/empleado.service';
-
+import { DialogCargarLicenciaMedicaComponent } from './dialog-cargar-licencia-medica/dialog-cargar-licencia-medica.component';
 @Component({
   selector: 'app-cargar-licencia-medica',
   templateUrl: './cargar-licencia-medica.component.html',
@@ -30,5 +30,24 @@ export class CargarLicenciaMedicaComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
+
+    // Cuando cliqueas una fila...
+    selectRow(value) {
+      this.openDialog(value);
+      console.log(value);
+    }
+  
+    openDialog(value) {
+      const dialogRef = this.dialog.open(DialogCargarLicenciaMedicaComponent, {
+        width: '600px',
+        data: value
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog closed: ` + result);
+        this.dialogResult = result;
+      });
+    }
+  
 
 }
