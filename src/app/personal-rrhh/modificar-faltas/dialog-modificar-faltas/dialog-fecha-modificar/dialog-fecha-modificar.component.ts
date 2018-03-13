@@ -8,8 +8,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class DialogFechaModificarComponent implements OnInit {
 
+  selectedConfirm:string;
+
   constructor(public thisDialogRef: MatDialogRef<DialogFechaModificarComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data) { }
+    @Inject(MAT_DIALOG_DATA) public data) { 
+      this.selectedConfirm = this.data.tipoFalta;
+      console.log(this.data.tipoFalta);
+    }
 
   ngOnInit() {
   }

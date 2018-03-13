@@ -1,3 +1,25 @@
-<p>
-  dialog-fecha-modificar works!
-</p>
+<div class="contenedor-principal">
+    <h2>{{data.name}}</h2>
+    <h2>{{data.fecha}}</h2>
+    <h4>Modificar de faltas</h4>
+    <hr>
+    <mat-dialog-content>
+    Seleccione una opcion de la lista...
+    <form>  
+    <mat-form-field>   
+    <mat-select [(value)]="selectedConfirm">
+        <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
+        <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
+        <mat-option value="Presente">Presente</mat-option>
+        <mat-option value="Presente con llegada tarde">Presente con llegada tarde</mat-option>
+        <mat-option value="Licencia por enfermedad">Licencia por enfermedad</mat-option>
+        <mat-option value="Licencia por ART">Licencia por ART</mat-option>
+    </mat-select>
+    </mat-form-field>
+     </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
+      <button mat-raised-button (click)="onCloseCancel()">CANCELAR</button>
+    </mat-dialog-actions>
+  </div>
