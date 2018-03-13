@@ -43,6 +43,7 @@ import { CargarArtComponent } from './personal-rrhh/cargar-art/cargar-art.compon
   import { DialogCargarArtComponent } from './personal-rrhh/cargar-art/dialog-cargar-art/dialog-cargar-art.component';
 import { ModificarFaltasComponent } from './personal-rrhh/modificar-faltas/modificar-faltas.component';
   import { DialogModificarFaltasComponent } from './personal-rrhh/modificar-faltas/dialog-modificar-faltas/dialog-modificar-faltas.component';
+    import { DialogFechaModificarComponent } from './personal-rrhh/modificar-faltas/dialog-modificar-faltas/dialog-fecha-modificar/dialog-fecha-modificar.component';
 
 
 
@@ -93,7 +94,8 @@ const routes: Routes = [
     DialogCargarArtComponent,
     DialogCargarLicenciaAnualComponent,
     DialogCargarLicenciaMedicaComponent,
-    DialogModificarFaltasComponent
+    DialogModificarFaltasComponent,
+    DialogFechaModificarComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +118,8 @@ const routes: Routes = [
     DialogCargarArtComponent,
     DialogCargarLicenciaAnualComponent,
     DialogCargarLicenciaMedicaComponent,
-    DialogModificarFaltasComponent
+    DialogModificarFaltasComponent,
+    DialogFechaModificarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
