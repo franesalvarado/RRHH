@@ -14,4 +14,9 @@ export class DialogCargarArtComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  onCloseCancel() {
+    this.thisDialogRef.close('Cancel');
+  }
+
 }

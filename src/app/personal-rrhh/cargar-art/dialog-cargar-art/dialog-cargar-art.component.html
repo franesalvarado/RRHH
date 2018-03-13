@@ -1,3 +1,53 @@
-<p>
-  dialog-cargar-art works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{data.name}}</h2></mat-card-title>
+    <mat-card-subtitle>Cargar ART</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-dialog-content>
+        <table>
+          <tr>
+            <td>Nro de siniestro:</td>
+            <td>
+              <mat-form-field>
+                  <input matInput placeholder="Numero de siniestro" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Fecha de ingreso:</td>
+            <td>
+              <mat-form-field>
+                  <input matInput required>
+              </mat-form-field>
+            </td>
+            <td>Fecha estimativa:</td>
+            <td>
+              <mat-form-field>
+                  <input matInput required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Fecha de control:</td>
+            <td>
+              <mat-form-field>
+                  <input matInput required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Detalles:</td>
+            <td colspan="3">
+              <mat-form-field>
+                  <input matInput required>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-dialog-content> 
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
+  </mat-card-actions>
+</mat-card>

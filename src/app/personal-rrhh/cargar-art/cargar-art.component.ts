@@ -40,7 +40,7 @@ export class CargarArtComponent implements OnInit {
 
   openDialog(value) {
     const dialogRef = this.dialog.open(DialogCargarArtComponent, {
-      width: '600px',
+      width: '800px',
       data: value
     });
 
