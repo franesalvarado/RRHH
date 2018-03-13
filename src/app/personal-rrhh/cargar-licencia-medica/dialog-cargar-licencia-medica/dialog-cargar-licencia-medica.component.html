@@ -1,3 +1,53 @@
-<p>
-  dialog-cargar-licencia-medica works!
-</p>
+<mat-card>
+    <mat-card-header>
+      <mat-card-title><h2>{{data.name}}</h2></mat-card-title>
+      <mat-card-subtitle>Cargar ART</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-dialog-content>
+          <table>
+            <tr>
+              <td>Tipo de licencia:</td>
+              <td>
+                <mat-form-field>
+                    <input matInput placeholder="Numero de siniestro" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>Inicia licencia:</td>
+              <td>
+                <mat-form-field>
+                    <input matInput required>
+                </mat-form-field>
+              </td>
+              <td>Finaliza licencia:</td>
+              <td>
+                <mat-form-field>
+                    <input matInput required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>Diagnostico:</td>
+              <td>
+                <mat-form-field>
+                    <input matInput required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>Detalles:</td>
+              <td colspan="3">
+                <mat-form-field>
+                    <input matInput required>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </mat-dialog-content> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
+    </mat-card-actions>
+  </mat-card>
