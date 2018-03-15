@@ -10,13 +10,17 @@
             <td>Fecha de salida:</td>
             <td>
               <mat-form-field>
-                  <input matInput required>
-              </mat-form-field>
+                  <input matInput [matDatepicker]="fechaSalida" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="fechaSalida"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaSalida disabled="false"></mat-datepicker>
+                </mat-form-field>
             </td>
             <td>Fecha de regreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput required>
+                  <input matInput [matDatepicker]="fechaRegreso" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="fechaRegreso"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaRegreso disabled="false"></mat-datepicker>
               </mat-form-field>
             </td>
           </tr>

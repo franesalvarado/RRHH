@@ -40,7 +40,7 @@ export class CargarLicenciaAnualComponent implements OnInit {
 
   openDialog(value) {
     const dialogRef = this.dialog.open(DialogCargarLicenciaAnualComponent, {
-      width: '600px',
+      width: '800px',
       data: value
     });
 

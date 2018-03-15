@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-header>
       <mat-card-title><h2>{{data.name}}</h2></mat-card-title>
-      <mat-card-subtitle>Cargar ART</mat-card-subtitle>
+      <mat-card-subtitle>Cargar licencia medica</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <mat-dialog-content>
@@ -9,31 +9,39 @@
             <tr>
               <td>Tipo de licencia:</td>
               <td>
-                <mat-form-field>
-                    <input matInput placeholder="Numero de siniestro" required>
-                </mat-form-field>
+                  <mat-select required placeholder="Seleccione una opcion">
+                      <mat-option>--</mat-option>
+                      <mat-option value="Enfermedad">Enfermedad</mat-option>
+                      <mat-option value="Enfermedad familiar">Enfermedad familiar</mat-option>
+                  </mat-select>
               </td>
             </tr>
             <tr>
               <td>Inicia licencia:</td>
               <td>
                 <mat-form-field>
-                    <input matInput required>
-                </mat-form-field>
+                    <input matInput [matDatepicker]="dp3" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                  </mat-form-field>
               </td>
               <td>Finaliza licencia:</td>
               <td>
                 <mat-form-field>
-                    <input matInput required>
+                    <input matInput [matDatepicker]="dp4" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+                    <mat-datepicker #dp4 disabled="false"></mat-datepicker>
                 </mat-form-field>
               </td>
             </tr>
             <tr>
               <td>Diagnostico:</td>
               <td>
-                <mat-form-field>
-                    <input matInput required>
-                </mat-form-field>
+                  <mat-select required placeholder="Seleccione una opcion">
+                      <mat-option>--</mat-option>
+                      <mat-option value="Enfermedad">Enfermedad</mat-option>
+                      <mat-option value="Enfermedad familiar">Enfermedad familiar</mat-option>
+                  </mat-select>
               </td>
             </tr>
             <tr>

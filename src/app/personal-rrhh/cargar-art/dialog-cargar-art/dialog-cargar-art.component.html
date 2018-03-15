@@ -18,22 +18,28 @@
             <td>Fecha de ingreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput required>
-              </mat-form-field>
+                  <input matInput [matDatepicker]="fechaIngreso" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="fechaIngreso"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaIngreso disabled="false"></mat-datepicker>
+                </mat-form-field>
             </td>
             <td>Fecha estimativa:</td>
             <td>
               <mat-form-field>
-                  <input matInput required>
-              </mat-form-field>
+                  <input matInput [matDatepicker]="fechaEstimativa" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="fechaEstimativa"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaEstimativa disabled="false"></mat-datepicker>
+                </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>Fecha de control:</td>
             <td>
               <mat-form-field>
-                  <input matInput required>
-              </mat-form-field>
+                  <input matInput [matDatepicker]="fechaControl" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="fechaControl"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaControl disabled="false"></mat-datepicker>
+                </mat-form-field>
             </td>
           </tr>
           <tr>
