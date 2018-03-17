@@ -1,0 +1,14 @@
+table{
+    position: relative;
+    width: 96%;
+    left: 2%;
+}
+
+td{
+    padding: 5px;
+    text-align: left;
+}
+
+td > * {
+    width: 100%;
+  }
