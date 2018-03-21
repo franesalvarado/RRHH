@@ -12,6 +12,12 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 })
 export class DialogCargarArtComponent implements OnInit {
 
+  // SE UTILIZA PARA QUE EL USUARIO PUEDA ELEGIR UNA FECHA CONTROL ENTRE ESTAS FECHAS
+  // Fecha de inicio de ART
+  minDate = new Date();
+  // Fecha de finalizacion de ART
+  maxDate = new Date();
+
   constructor(public thisDialogRef: MatDialogRef<DialogCargarArtComponent>, 
     @Inject(MAT_DIALOG_DATA) public data,
     private adapter: DateAdapter<any>) {

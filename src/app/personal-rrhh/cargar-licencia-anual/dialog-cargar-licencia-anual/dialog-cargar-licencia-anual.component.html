@@ -10,7 +10,7 @@
             <td>Fecha de salida:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaSalida" disabled>
+                  <input matInput [matDatepickerFilter]="myFilterSalida" [matDatepicker]="fechaSalida" [(ngModel)]="minDate" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaSalida"></mat-datepicker-toggle>
                   <mat-datepicker #fechaSalida disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -18,7 +18,7 @@
             <td>Fecha de regreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaRegreso" disabled>
+                  <input matInput [min]="minDate" [matDatepickerFilter]="myFilterVuelta" [matDatepicker]="fechaRegreso" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaRegreso"></mat-datepicker-toggle>
                   <mat-datepicker #fechaRegreso disabled="false"></mat-datepicker>
               </mat-form-field>
@@ -35,6 +35,7 @@
       </mat-dialog-content> 
   </mat-card-content>
   <mat-card-actions>
+      <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
       <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
   </mat-card-actions>
 </mat-card>

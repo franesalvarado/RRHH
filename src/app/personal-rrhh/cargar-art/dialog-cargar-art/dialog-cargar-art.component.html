@@ -18,7 +18,7 @@
             <td>Fecha de ingreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaIngreso" disabled>
+                  <input matInput [matDatepicker]="fechaIngreso" [(ngModel)]="minDate" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaIngreso"></mat-datepicker-toggle>
                   <mat-datepicker #fechaIngreso disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -26,7 +26,7 @@
             <td>Fecha estimativa:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaEstimativa" disabled>
+                  <input matInput [matDatepicker]="fechaEstimativa" [min]="minDate" [(ngModel)]="maxDate" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaEstimativa"></mat-datepicker-toggle>
                   <mat-datepicker #fechaEstimativa disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -36,7 +36,7 @@
             <td>Fecha de control:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaControl" disabled>
+                  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="fechaControl" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaControl"></mat-datepicker-toggle>
                   <mat-datepicker #fechaControl disabled="false"></mat-datepicker>
                 </mat-form-field>
