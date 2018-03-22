@@ -10,7 +10,13 @@
             <td>Nro de siniestro:</td>
             <td>
               <mat-form-field>
-                  <input matInput placeholder="Numero de siniestro" required>
+                <input matInput placeholder="Numero de siniestro" [formControl]="nroIncidente"  OnlyNumber="true" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="nroIncidente.hasError('email') && !nroIncidente.hasError('required')">
+                  Por favor, ingrese numeros
+                </mat-error>
+                <mat-error *ngIf="nroIncidente.hasError('required')">
+                  Este campo es <strong>obligatorio</strong>
+                </mat-error>
               </mat-form-field>
             </td>
           </tr>
@@ -18,7 +24,7 @@
             <td>Fecha de ingreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaIngreso" [(ngModel)]="minDate" disabled>
+                  <input matInput [matDatepicker]="fechaIngreso" [(ngModel)]="inicioART" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaIngreso"></mat-datepicker-toggle>
                   <mat-datepicker #fechaIngreso disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -26,7 +32,7 @@
             <td>Fecha estimativa:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaEstimativa" [min]="minDate" [(ngModel)]="maxDate" disabled>
+                  <input matInput [matDatepicker]="fechaEstimativa" [min]="inicioART" [(ngModel)]="finART" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaEstimativa"></mat-datepicker-toggle>
                   <mat-datepicker #fechaEstimativa disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -36,7 +42,7 @@
             <td>Fecha de control:</td>
             <td>
               <mat-form-field>
-                  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="fechaControl" disabled>
+                  <input matInput [min]="inicioART" [max]="finART" [matDatepicker]="fechaControl" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaControl"></mat-datepicker-toggle>
                   <mat-datepicker #fechaControl disabled="false"></mat-datepicker>
                 </mat-form-field>

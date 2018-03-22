@@ -9,6 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './libreria/commons/material.module';
 import { NgPrimeModule } from './libreria/commons/ngprime.module';
 
+//OnlyNumbers
+import { OnlyNumber } from './libreria/onlyNumbers/onlynumber.directive';
+
 // Router
 import { Routes, RouterModule } from '@angular/router';
 
@@ -95,7 +98,8 @@ const routes: Routes = [
     DialogCargarLicenciaAnualComponent,
     DialogCargarLicenciaMedicaComponent,
     DialogModificarFaltasComponent,
-    DialogFechaModificarComponent
+    DialogFechaModificarComponent,
+    OnlyNumber
   ],
   imports: [
     BrowserModule,
