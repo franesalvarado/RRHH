@@ -9,7 +9,7 @@
             <tr>
               <td>Tipo de licencia:</td>
               <td>
-                  <mat-select required placeholder="Seleccione una opcion">
+                  <mat-select required placeholder="Seleccione una opcion" [(ngModel)]="formLicenciaMedica.tipoLicencia">
                       <mat-option>--</mat-option>
                       <mat-option value="Enfermedad">Enfermedad</mat-option>
                       <mat-option value="Enfermedad familiar">Enfermedad familiar</mat-option>
@@ -20,7 +20,7 @@
               <td>Inicia licencia:</td>
               <td>
                 <mat-form-field>
-                    <input matInput [matDatepicker]="inicioLicencia" disabled>
+                    <input matInput [matDatepicker]="inicioLicencia" disabled [(ngModel)]="formLicenciaMedica.fechaIngreso">
                     <mat-datepicker-toggle matSuffix [for]="inicioLicencia"></mat-datepicker-toggle>
                     <mat-datepicker #inicioLicencia disabled="false"></mat-datepicker>
                   </mat-form-field>
@@ -28,7 +28,7 @@
               <td>Finaliza licencia:</td>
               <td>
                 <mat-form-field>
-                    <input matInput [matDatepicker]="finLicencia" disabled>
+                    <input matInput [matDatepicker]="finLicencia" [min]="formLicenciaMedica.fechaIngreso" disabled [(ngModel)]="formLicenciaMedica.fechaFinaliza">
                     <mat-datepicker-toggle matSuffix [for]="finLicencia"></mat-datepicker-toggle>
                     <mat-datepicker #finLicencia disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -37,7 +37,7 @@
             <tr>
               <td>Diagnostico:</td>
               <td>
-                  <mat-select required placeholder="Seleccione una opcion">
+                  <mat-select required placeholder="Seleccione una opcion" [(ngModel)]="formLicenciaMedica.diagnostico">
                       <mat-option>--</mat-option>
                       <mat-option value="Traumatologica">Traumatologica</mat-option>
                       <mat-option value="Ofmatologica">Ofmatologica</mat-option>
@@ -50,7 +50,7 @@
             <tr>
               <td colspan="4">
                   <mat-form-field>
-                    <textarea matInput placeholder="Detalles"></textarea>
+                    <textarea matInput placeholder="Detalles" [(ngModel)]="formLicenciaMedica.detalles"></textarea>
                   </mat-form-field>
                 </td>
             </tr>
@@ -58,6 +58,7 @@
         </mat-dialog-content> 
     </mat-card-content>
     <mat-card-actions>
+        <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
         <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
     </mat-card-actions>
   </mat-card>

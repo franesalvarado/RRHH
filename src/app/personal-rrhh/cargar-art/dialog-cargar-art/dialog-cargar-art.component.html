@@ -10,13 +10,7 @@
             <td>Nro de siniestro:</td>
             <td>
               <mat-form-field>
-                <input matInput placeholder="Numero de siniestro" [formControl]="nroIncidente"  OnlyNumber="true" [errorStateMatcher]="matcher">
-                <mat-error *ngIf="nroIncidente.hasError('email') && !nroIncidente.hasError('required')">
-                  Por favor, ingrese numeros
-                </mat-error>
-                <mat-error *ngIf="nroIncidente.hasError('required')">
-                  Este campo es <strong>obligatorio</strong>
-                </mat-error>
+                <input matInput placeholder="Numero de siniestro"  [(ngModel)]="formART.nroIncidente"   OnlyNumber="true">
               </mat-form-field>
             </td>
           </tr>
@@ -24,7 +18,7 @@
             <td>Fecha de ingreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaIngreso" [(ngModel)]="inicioART" disabled>
+                  <input matInput [matDatepicker]="fechaIngreso" [(ngModel)]="formART.fechaIngreso" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaIngreso"></mat-datepicker-toggle>
                   <mat-datepicker #fechaIngreso disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -32,7 +26,7 @@
             <td>Fecha estimativa:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepicker]="fechaEstimativa" [min]="inicioART" [(ngModel)]="finART" disabled>
+                  <input matInput [matDatepicker]="fechaEstimativa" [min]="formART.fechaIngreso" [(ngModel)]="formART.fechaEstimativa" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaEstimativa"></mat-datepicker-toggle>
                   <mat-datepicker #fechaEstimativa disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -42,16 +36,16 @@
             <td>Fecha de control:</td>
             <td>
               <mat-form-field>
-                  <input matInput [min]="inicioART" [max]="finART" [matDatepicker]="fechaControl" disabled>
-                  <mat-datepicker-toggle matSuffix [for]="fechaControl"></mat-datepicker-toggle>
-                  <mat-datepicker #fechaControl disabled="false"></mat-datepicker>
+                  <input matInput [min]="formART.fechaIngreso" [max]="formART.fechaEstimativa" [matDatepicker]="fechaDeControl"  [(ngModel)]="formART.fechaControl" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="fechaDeControl"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaDeControl disabled="false"></mat-datepicker>
                 </mat-form-field>
             </td>
           </tr>
           <tr>
             <td colspan="4">
               <mat-form-field>
-                <textarea matInput placeholder="Detalles"></textarea>
+                <textarea matInput placeholder="Detalles" [(ngModel)]="formART.detalles"></textarea>
               </mat-form-field>
             </td>
           </tr>
@@ -59,6 +53,7 @@
       </mat-dialog-content> 
   </mat-card-content>
   <mat-card-actions>
+      <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
       <button mat-raised-button (click)="onCloseCancel()">SALIR</button>
   </mat-card-actions>
 </mat-card>

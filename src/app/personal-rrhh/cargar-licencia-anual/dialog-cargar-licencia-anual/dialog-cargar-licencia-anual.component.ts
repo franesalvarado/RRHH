@@ -1,16 +1,19 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+// Modelo de formulario
+import { FormLicenciaAnual } from '../../../libreria/models/personal-rrhh/formularios-rrhh'; 
 
 @Component({
   selector: 'app-dialog-cargar-licencia-anual',
   templateUrl: './dialog-cargar-licencia-anual.component.html',
   styleUrls: ['./dialog-cargar-licencia-anual.component.css']
 })
+
 export class DialogCargarLicenciaAnualComponent{
 
-    minDate = new Date();
-    
+    formLicenciaAnual = new FormLicenciaAnual();
+
     constructor(public thisDialogRef: MatDialogRef<DialogCargarLicenciaAnualComponent>, 
     @Inject(MAT_DIALOG_DATA) public data,
     private adapter: DateAdapter<any>) {
@@ -18,8 +21,9 @@ export class DialogCargarLicenciaAnualComponent{
     }
 
 
-
     onCloseConfirm(){
+      console.log(this.formLicenciaAnual);
+      this.thisDialogRef.close('Confirm');
     }
 
     onCloseCancel() {

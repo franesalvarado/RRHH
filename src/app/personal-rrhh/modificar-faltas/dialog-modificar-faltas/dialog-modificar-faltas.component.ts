@@ -2,7 +2,6 @@ import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { EmpleadoService } from '../../../libreria/servicios/empleado.service';
 import { MatDialog } from '@angular/material';
-import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
 import { map } from 'rxjs/operators/map';
@@ -11,6 +10,8 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { DatePipe } from '@angular/common';
 import { DialogFechaModificarComponent } from './dialog-fecha-modificar/dialog-fecha-modificar.component';
+
+import { FormModificarFaltas } from '../../../libreria/models/personal-rrhh/formularios-rrhh'; 
 
 @Component({
   selector: 'app-dialog-modificar-faltas',
@@ -22,10 +23,10 @@ export class DialogModificarFaltasComponent implements OnInit {
 
   displayedColumns = ['fecha', 'tipoFalta'];
   dataSource;
-  public agentesFaltas: EmpleadoFaltas[];
-  public faltasAux;
-  public agenteFaltas = [];
-  public legajoData: number;
+  agentesFaltas: EmpleadoFaltas[];
+  faltasAux;
+  agenteFaltas = [];
+  legajoData: number;
   dialogResult;
 
   @ViewChild(MatSort) sort: MatSort;
@@ -61,9 +62,8 @@ export class DialogModificarFaltasComponent implements OnInit {
   }
 
   // Cuando clickeas una fila...
-  selectRow(value) {
+  selectRow(value) {;
     this.openDialog(value);
-    console.log(value);
   }
 
   openDialog(value) {

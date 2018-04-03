@@ -33,9 +33,7 @@ export class ModificarFaltasComponent implements OnInit {
   }
   // Cuando cliqueas una fila...
   selectRow(value) {
-    this.openDialog(value);
-    console.log(value);
-  }
+    this.openDialog(value);  }
 
   openDialog(value) {
     const dialogRef = this.dialog.open(DialogModificarFaltasComponent, {

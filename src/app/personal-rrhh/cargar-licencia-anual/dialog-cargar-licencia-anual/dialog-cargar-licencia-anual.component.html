@@ -10,7 +10,7 @@
             <td>Fecha de salida:</td>
             <td>
               <mat-form-field>
-                  <input matInput [matDatepickerFilter]="myFilterSalida" [matDatepicker]="fechaSalida" [(ngModel)]="minDate" disabled>
+                  <input matInput [matDatepickerFilter]="myFilterSalida" [matDatepicker]="fechaSalida" [(ngModel)]="formLicenciaAnual.fechaSalida" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaSalida"></mat-datepicker-toggle>
                   <mat-datepicker #fechaSalida disabled="false"></mat-datepicker>
                 </mat-form-field>
@@ -18,7 +18,7 @@
             <td>Fecha de regreso:</td>
             <td>
               <mat-form-field>
-                  <input matInput [min]="minDate" [matDatepickerFilter]="myFilterVuelta" [matDatepicker]="fechaRegreso" disabled>
+                  <input matInput [min]="formLicenciaAnual.fechaSalida" [matDatepickerFilter]="myFilterVuelta" [(ngModel)]="formLicenciaAnual.fechaRegreso" [matDatepicker]="fechaRegreso" disabled>
                   <mat-datepicker-toggle matSuffix [for]="fechaRegreso"></mat-datepicker-toggle>
                   <mat-datepicker #fechaRegreso disabled="false"></mat-datepicker>
               </mat-form-field>
@@ -27,7 +27,7 @@
           <tr>
             <td colspan="4">
                 <mat-form-field>
-                  <textarea matInput placeholder="Detalles"></textarea>
+                  <textarea matInput placeholder="Detalles" [(ngModel)]="formLicenciaAnual.detalles"></textarea>
                 </mat-form-field>
               </td>
           </tr>
