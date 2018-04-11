@@ -16,17 +16,9 @@ export class EmpleadoFaltas{
 
     export class TipoFalta{
         tipoFalta: string;
-        fecha: string;
+        fecha: Date;
     }
     
-    export class TipoPresente{
-        tipoPresente: string;
-        fecha: string;
-    }
-    export class TipoLicencia{
-        tipoLicencia: string;
-        fecha: string;
-    }
 
     
 export class EmpleadoFaltasNoMock{

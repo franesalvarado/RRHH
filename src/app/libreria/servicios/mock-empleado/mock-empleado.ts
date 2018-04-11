@@ -32,43 +32,43 @@ export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
     [
       {
         tipoFalta: "Ausencia con aviso",
-        fecha: "2018/1/29"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/1/30"
+        fecha: new Date("2018-1-30")
       },
       {
         tipoFalta: "Presente con llegada tarde",
-        fecha: "2018/1/31"
+        fecha:new Date("2018-1-31")
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/2/1"
+        fecha: new Date("2018-2-1")
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/2/2"
+        fecha: new Date("2018-2-2")
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/2/5"
+        fecha: new Date("2018-2-3")
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/2/6"
+        fecha: new Date("2018-2-4")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/7"
+        fecha: new Date("2018-2-5")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/8"
+        fecha: new Date("2018-2-6")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/9"
+        fecha: new Date("2018-2-7")
       }
     ]
   },
@@ -78,43 +78,43 @@ export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
     [
       {
         tipoFalta: "Presente",
-        fecha: "2018/1/2"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Ausencia sin aviso",
-        fecha: "2018/1/30"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente con llegada tarde",
-        fecha: "2018/1/31"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/1"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/2"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/2/5"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Licencia por enfermedad",
-        fecha: "2018/2/6"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/7"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/8"
+        fecha: new Date("2018-1-29")
       },
       {
         tipoFalta: "Presente",
-        fecha: "2018/2/9"
+        fecha: new Date("2018-1-29")
       }
     ]
   },

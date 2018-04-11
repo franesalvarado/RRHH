@@ -22,7 +22,7 @@ export class FormLicenciaMedica{
 
 export class FormModificarFaltas{
     oldTipoFalta: string;
-    tipoFalta: string;
+    newTipoFalta: string;
     fecha: Date;
     legajo: number;
 }

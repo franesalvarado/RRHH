@@ -15,10 +15,9 @@ export class DialogFechaModificarComponent implements OnInit {
   constructor(public thisDialogRef: MatDialogRef<DialogFechaModificarComponent>, 
     @Inject(MAT_DIALOG_DATA) public data) { 
       this.formModificarFaltas.oldTipoFalta = this.data.tipoFalta;
-      this.formModificarFaltas.tipoFalta = this.data.tipoFalta;
+      this.formModificarFaltas.newTipoFalta = this.data.tipoFalta;
       this.formModificarFaltas.legajo = this.data.legajo;
       this.formModificarFaltas.fecha = this.data.fecha;
-      console.log(this.data.tipoFalta);
     }
 
   ngOnInit() {
