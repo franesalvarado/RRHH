@@ -35,7 +35,7 @@ export class CargarArtComponent implements OnInit {
   // Cuando cliqueas una fila...
   selectRow(value) {
     this.openDialog(value);
-    console.log(value);
+    // console.log(value);
   }
 
   openDialog(value) {
