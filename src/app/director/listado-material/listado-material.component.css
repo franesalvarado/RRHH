@@ -26,10 +26,11 @@
     box-shadow: none;
     
   }
-
+  /* Anchura de nro. */
   .mat-column-position{
     max-width: 50px;
   }
+  /* Anchura de confirmado. */
   .mat-column-confirmado{
     max-width: 80px;
     text-align: center;

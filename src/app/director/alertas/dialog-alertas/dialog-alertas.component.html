@@ -2,9 +2,25 @@
     <h2>{{data.name}}</h2>
     <h4>Alertas sobre el agente</h4>
     <mat-dialog-content>
-    El personal se encuentra con <strong>licencia medica desde 20/2/2018 hasta 23/2/2018</strong>
-    <hr>
-    <span class="info-adicional">Cualquier duda comunicarse con la Direccion General de Recursos Humanos al interno 1400</span>
+      <mat-tab-group>
+        <mat-tab label="Faltas del mes">
+          <div class="espacio-group">
+            El agente no tiene faltas.
+          </div>
+        </mat-tab>
+        <mat-tab label="Licencias por enfermedad">
+          <div class="espacio-group">
+            El personal se encuentra con <strong>licencia medica desde 20/2/2018 hasta 23/2/2018</strong>
+          </div>
+        </mat-tab>
+        <mat-tab label="Licencias anual extraordinarias">
+          <div class="espacio-group">
+            El agente no registra vacaciones proximas.
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+      <hr>
+      <span class="info-adicional">Cualquier duda comunicarse con la Direccion General de Recursos Humanos al interno 1400</span>
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-raised-button (click)="onCloseCancel()">SALIR</button>

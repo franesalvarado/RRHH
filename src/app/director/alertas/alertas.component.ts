@@ -28,12 +28,14 @@ export class AlertasComponent implements OnInit {
   ngOnInit() {
     this.empleados = this._empleadoService.getEmpleados();
     console.log(this.empleados);
+    /*
     for (let i in this.empleados){
       if (this.empleados[i].cantFaltasMensual > 2){
         this.ELEMENT_DATA_SELECT.push(this.empleados[i]);
       }
     }
-    this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
+    */
+    this.dataSource = new MatTableDataSource(this.empleados);
   }
 
     // Cuando cliqueas una fila...

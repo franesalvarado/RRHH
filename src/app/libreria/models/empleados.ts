@@ -4,9 +4,6 @@ export class Empleado{
     legajo: number;
     tipoContrato: string;
     confirmado: boolean;
-    cantFaltasMensual: number;
-    cantFaltasTotal: number;
-    cantRestVacaciones: number;
 }
 
 export class EmpleadoFaltas{

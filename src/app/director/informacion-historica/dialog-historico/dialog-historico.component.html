@@ -11,7 +11,7 @@
                 <!-- Position Column -->
                 <ng-container matColumnDef="fecha">
                   <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true"> Fecha </mat-header-cell>
-                  <mat-cell *matCellDef="let element" > {{element.fecha |  date:'MM/dd/yyyy'}} </mat-cell>
+                  <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
                 </ng-container>
                 <!-- Name Column -->
                 <ng-container matColumnDef="tipoFalta">

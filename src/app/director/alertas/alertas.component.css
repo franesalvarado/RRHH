@@ -1,3 +1,8 @@
+/* color de header de table */
 .mat-header-row{
     background-color: #e4e4e4;
   }
+/* anchura de Nro. de header de table */
+.mat-column-position{
+  max-width: 50px;
+}
