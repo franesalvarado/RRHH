@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Empleado, TipoFalta } from '../../../libreria/models/empleados';
+import { Empleado } from '../../../libreria/models/empleados';
+import { TipoFalta, TipoPresente } from '../../../libreria/models/director/formulario-director';
 
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -19,10 +20,9 @@ export class DialogTableComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   selected = "Ausencia sin aviso";
   selectedConfirm = "Presente";
+  detalles = "";
   tipoFalta: TipoFalta;
-  tipoPresente: TipoFalta;
-
-
+  tipoPresente: TipoPresente;
 
   constructor(public thisDialogRef: MatDialogRef<DialogTableComponent>, 
               @Inject(MAT_DIALOG_DATA) public data: Empleado) 
@@ -35,13 +35,14 @@ export class DialogTableComponent implements OnInit {
     this.thisDialogRef.close('confirm');
     if (this.selected == "Ausencia sin aviso" || this.selected == "Ausencia con aviso"){
       this.tipoFalta = {
-        tipoFalta: this.selected,
-        fecha: this.displayDate
+        falta: this.selected,
+        fecha: this.displayDate,
+        detalles: this.detalles
       }
     console.log(this.tipoFalta);
     }else if (this.selected == "Presente" || this.selected == "Presente con llegada tarde"){
       this.tipoPresente = {
-        tipoFalta: this.selected,
+        falta: this.selected,
         fecha: this.displayDate
       }
     console.log(this.tipoPresente);

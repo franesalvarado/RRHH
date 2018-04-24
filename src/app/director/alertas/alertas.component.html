@@ -11,25 +11,25 @@
       <!-- Position Column -->
       <ng-container matColumnDef="position" >
         <mat-header-cell *matHeaderCellDef> Nro. </mat-header-cell>
-        <mat-cell *matCellDef="let element" > {{element.position}} </mat-cell>
+        <mat-cell *matCellDef="let element" ></mat-cell>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        <mat-cell *matCellDef="let element">{{element.nombre}} {{element.apellido}} </mat-cell>
       </ng-container>
 
       <!-- legajo Column -->
       <ng-container matColumnDef="legajo">
         <mat-header-cell *matHeaderCellDef> Legajo </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.legajo}} </mat-cell>
+        <mat-cell *matCellDef="let element">{{element.legajo}}</mat-cell>
       </ng-container>
 
       <!-- tipoContrato Column -->
       <ng-container matColumnDef="tipoContrato">
         <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.tipoContrato}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.tipoPlanta}} </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

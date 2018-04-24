@@ -39,7 +39,7 @@ export class ListadoMaterialComponent implements OnInit {
         if (this.parametro != null) {
           this.ELEMENT_DATA_SELECT = [];
           for (let i in this.empleados) {
-            if (this.empleados[i].tipoContrato == this.parametro) {
+            if (this.empleados[i].tipoPlanta == this.parametro) {
               // console.log(ELEMENT_DATA[i]);
               this.ELEMENT_DATA_SELECT.push(this.empleados[i]);
             }

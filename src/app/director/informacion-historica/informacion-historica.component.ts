@@ -14,7 +14,7 @@ import { EmpleadoService } from '../../libreria/servicios/empleado.service';
 })
 export class InformacionHistoricaComponent implements OnInit {
   dialogResult;
-  displayedColumns = ['position', 'name', 'legajo', 'tipoContrato'];
+  displayedColumns = ['position', 'nombre', 'legajo', 'tipoPlanta'];
   dataSource;
   empleados;
 

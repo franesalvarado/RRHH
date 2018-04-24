@@ -1,29 +1,48 @@
+// TABLA DE EMPLEADO
 export class Empleado{
-    position: number;
-    name: string;
+    nombre: string;
+    apellido: string;
     legajo: number;
-    tipoContrato: string;
-    confirmado: boolean;
-}
+    tipoPlanta: string; //TipoPlanta
+    tipoCategoria: string; // Nombre de la categoria
+    numCategoria: number; // Numero de categoria
+    //Faltas (Se vincula con otra tabla)
+} 
 
+// TABLA DE FALTAS
 export class EmpleadoFaltas{
-    legajo: number;
-    tipoFalta: TipoFalta[];
+    legajo: number; // Legajo por agente
+    presente: Presente[];
+    ausente: Ausente[];
+    licenciaMedica: LicenciaMedica[];
+    licenciaART: LicenciaART[];
+    licenciaAnual: LicenciaAnual[];
 }
-
-    export class TipoFalta{
-        tipoFalta: string;
-        fecha: Date;
-    }
-    
-
-    
-export class EmpleadoFaltasNoMock{
-        legajo: number;
-        tipoFaltaNoMock: TipoFalta[];
-    }
-
-    export class tipoFaltaNoMock{
-        tipoFalta: string;
-        fecha: Date;
-    }
+        export class Presente{
+            falta: string;
+            fecha: Date;
+        }
+        export class Ausente{
+            falta: string;
+            fecha: Date;
+            detalles: string;
+        }
+        export class LicenciaMedica{
+            falta: string;
+            tipoLicencia: string;
+            diagnostico: string;
+            fecha: Date[];
+            detalles: string;
+        }
+        export class LicenciaART{
+            falta: string;
+            nroSiniestro: number;
+            fechaControl: Date;
+            fecha: Date[];
+            detalles: string;
+        }
+        export class LicenciaAnual{
+            falta: string;
+            fecha: Date[];
+            detalles: string;
+        }

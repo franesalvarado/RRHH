@@ -13,7 +13,7 @@ import {switchMap} from 'rxjs/operators/switchMap';
 import { DatePipe } from '@angular/common';
 // Modelo de formulario
 import { FormModificarFaltas } from '../../../libreria/models/personal-rrhh/formularios-rrhh'; 
-import { EmpleadoFaltas, EmpleadoFaltasNoMock, tipoFaltaNoMock, TipoFalta } from '../../../libreria/models/empleados';
+import { EmpleadoFaltas } from '../../../libreria/models/empleados';
 import { EmpleadoService } from '../../../libreria/servicios/empleado.service';
 // Dialog que se abre
 import { DialogFechaModificarComponent } from './dialog-fecha-modificar/dialog-fecha-modificar.component';
@@ -67,8 +67,8 @@ export class DialogModificarFaltasComponent implements OnInit {
       this.agentesFaltas = this._EmpleadoService.getEmpleadosFaltas();
       // Se empieza a revisar los legajos de los empleados falsos
       for (let i in this.agentesFaltas) {
-      if (this.agentesFaltas[i].legajo == this.legajoData)
-        this.faltasAux = this.agentesFaltas[i].tipoFalta;
+        //if (this.agentesFaltas[i].legajo == this.legajoData)
+          // this.faltasAux = this.agentesFaltas[i].tipoFalta;
       }
       // Se trasnforma el tipo de fecha recibido a otro
       for (let e in this.faltasAux){

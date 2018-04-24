@@ -1,109 +1,117 @@
-import { Empleado, EmpleadoFaltas } from '../../models/empleados';
+import { Empleado, EmpleadoFaltas, Presente, Ausente, LicenciaAnual, LicenciaART, LicenciaMedica } from '../../models/empleados';
 export const EMPLEADOS: Empleado[] = [
-  {position: 1, name: 'Pablo', legajo: 51628, tipoContrato: 'Coordinado', confirmado: true},
-  {position: 2, name: 'Luis', legajo: 51629, tipoContrato: 'Coordinado', confirmado: false},
-  {position: 3, name: 'Oscar', legajo: 51635, tipoContrato: 'Coordinado', confirmado: false},
-  {position: 4, name: 'Francisco', legajo: 81621, tipoContrato: 'Becado', confirmado: false},
-  {position: 5, name: 'Juan', legajo: 50215, tipoContrato: 'Coordinado', confirmado: false},
-  {position: 6, name: 'Estela', legajo: 50012, tipoContrato: 'Planta Permanente', confirmado: true},
-  {position: 7, name: 'Braian', legajo: 80014, tipoContrato: 'Becado', confirmado: false},
-  {position: 8, name: 'Alejandro', legajo: 52613, tipoContrato: 'Coordinado', confirmado: false},
-  {position: 9, name: 'Damian', legajo: 54125, tipoContrato: 'Becado', confirmado: false},
-  {position: 10, name: 'Gisela', legajo: 59125, tipoContrato: 'Planta Permanente', confirmado: false},
-  {position: 11, name: 'Daniela', legajo: 84268, tipoContrato: 'Planta Permanente', confirmado: false},
-  {position: 12, name: 'Carolina', legajo: 62147, tipoContrato: 'Becado', confirmado: false}];
+  {nombre: 'Pablo', apellido: 'Schmitt', legajo: 51628, tipoPlanta: 'Coordinado', 
+    tipoCategoria: 'Director', numCategoria: 21},
+  {nombre: 'Luis', apellido: 'Perez', legajo: 51629, tipoPlanta: 'Coordinado', 
+    tipoCategoria: 'Jefe de departamento', numCategoria: 17},
+  {nombre: 'Oscar', apellido: 'Fernandez', legajo: 51635, tipoPlanta: 'Coordinado', 
+    tipoCategoria: 'Jefe de departamento', numCategoria: 17},
+  {nombre: 'Francisco', apellido: 'Alvarado', legajo: 81621, tipoPlanta: 'Becado', 
+    tipoCategoria: 'Beca', numCategoria: 999999},
+  {nombre: 'Estela', apellido: 'Lopez', legajo: 50012, tipoPlanta: 'Planta Permanente', 
+    tipoCategoria: 'Jefe de departamente', numCategoria: 17},
+  {nombre: 'Braian', apellido: 'Vidla', legajo: 80014, tipoPlanta: 'Becado', 
+    tipoCategoria: 'Administrativo', numCategoria: 12},
+  {nombre: 'Alejandro', apellido: 'Hock', legajo: 52613, tipoPlanta: 'Coordinado', 
+    tipoCategoria: 'Administrativo', numCategoria: 12},
+  {nombre: 'Gisela', apellido: 'Vazquez',legajo: 59125, tipoPlanta: 'Becado', 
+    tipoCategoria: 'Beca', numCategoria: 999999},
+  {nombre: 'Daniela', apellido: 'Bernal', legajo: 84268, tipoPlanta: 'Coordinado', 
+    tipoCategoria: 'Administrativo', numCategoria: 15},
+  {nombre: 'Carolina', apellido: 'Tevez', legajo: 62147, tipoPlanta: 'Becado', 
+    tipoCategoria: 'Administrativo', numCategoria: 999999}];
 
 export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
   {
     legajo: 51628,
-    tipoFalta:
-    [
-      {
-        tipoFalta: "Ausencia con aviso",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-30")
-      },
-      {
-        tipoFalta: "Presente con llegada tarde",
-        fecha:new Date("2018-1-31")
-      },
-      {
-        tipoFalta: "Licencia por enfermedad",
-        fecha: new Date("2018-2-1")
-      },
-      {
-        tipoFalta: "Licencia por enfermedad",
-        fecha: new Date("2018-2-2")
-      },
-      {
-        tipoFalta: "Licencia por enfermedad",
-        fecha: new Date("2018-2-3")
-      },
-      {
-        tipoFalta: "Licencia por enfermedad",
-        fecha: new Date("2018-2-4")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-2-5")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-2-6")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-2-7")
-      }
-    ]
-  },
-  {
-    legajo: 81621,
-    tipoFalta:
-    [
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Ausencia sin aviso",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente con llegada tarde",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Licencia por enfermedad",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Licencia por enfermedad",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-29")
-      },
-      {
-        tipoFalta: "Presente",
-        fecha: new Date("2018-1-29")
-      }
-    ]
-  },
+    presente:
+      [
+        {
+          falta: "Presente",
+          fecha: new Date("2018-1-30")
+        },
+        {
+          falta: "Presente con llegada tarde",
+          fecha:new Date("2018-1-31")
+        },
+        {
+          falta: "Presente",
+          fecha: new Date("2018-2-5")
+        },
+        {
+          falta: "Presente",
+          fecha: new Date("2018-2-6")
+        },
+        {
+          falta: "Presente",
+          fecha: new Date("2018-2-7")
+        }
+      ],
+    ausente:
+      [
+        {
+          falta: "Ausencia con aviso",
+          fecha: new Date("2018-1-29"),
+          detalles: "Falta por hijo descompuesto"
+        }  
+      ],
+    licenciaMedica:
+      [
+        {
+          falta: "Licencia Medica",
+          tipoLicencia: "Enfermedad Familiar",
+          diagnostico: "Ofmatologica",
+          fecha: 
+          [
+              new Date("2018-2-1"),
+              new Date("2018-2-2"),
+              new Date("2018-2-2"),
+          ],
+          detalles: "Tres dia de reposo"
+        },
+        {
+          falta: "Licencia Medica",
+          tipoLicencia: "Enfermedad",
+          diagnostico: "Digestiva",
+          fecha: 
+          [
+            new Date("2018-2-4")
+          ],
+          detalles: "Un dia de reposo"
+        }
+      ],
+    licenciaART:
+      [
+        {
+          falta: "Licencia por ART",
+          nroSiniestro: 123456,
+          fechaControl: new Date("2018-2-6"),
+          fecha:
+          [
+            new Date("2018-2-5"),
+            new Date("2018-2-6"),
+            new Date("2018-2-7"),
+            new Date("2018-2-8"),
+          ],
+          detalles: "Accidente Laboral",
+        }
+      ],
+    licenciaAnual:
+      [
+        {
+          falta: "Licencia Anual Extraordinaria",
+          fecha: 
+          [
+            new Date("2016-4-16"),
+            new Date("2016-4-17"),
+            new Date("2016-4-18"),
+            new Date("2016-4-19"),
+            new Date("2016-4-20"),
+            new Date("2016-4-21"),
+            new Date("2016-4-22")
+          ],
+          detalles: "Restan 14 dias de vacaciones"
+        }
+      ]
+  }
 ]

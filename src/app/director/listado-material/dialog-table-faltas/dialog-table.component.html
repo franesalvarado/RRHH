@@ -5,25 +5,31 @@
   <mat-dialog-content>
   Seleccione una opcion de la lista...
   <form>  
-  <mat-form-field>   
-  <mat-select [(value)]="selectedConfirm" [disabled]="true" *ngIf="data.confirmado; else elseBlock">
-      <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
-      <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
-      <mat-option value="Presente">Presente</mat-option>
-      <mat-option value="Presente con llegada tarde">Presente con llegada tarde</mat-option>
-  </mat-select>
-  <ng-template #elseBlock>    
-    <mat-select [(value)]="selected" [disabled]="false">
-        <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
-        <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
-        <mat-option value="Presente">Presente</mat-option>
-        <mat-option value="Presente con llegada tarde">Presente con llegada tarde</mat-option>
-    </mat-select>
-  </ng-template>
-  </mat-form-field>
-   </form>
+    <mat-form-field>   
+      <!-- En caso que ya se haya elegido un agente que ya se le ha cargado la falta,
+            va a visualizar la falta elegida pero no la va a poder modificar -->
+      <mat-select [(value)]="selectedConfirm" [disabled]="true" *ngIf="data.confirmado; else elseBlock">
+          <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
+          <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
+          <mat-option value="Presente">Presente</mat-option>
+          <mat-option value="Presente con llegada tarde">Presente con llegada tarde</mat-option>
+      </mat-select>
+      <!-- En caso que ya se haya elegido un agente que NO se le ha cargado la falta,
+            va a habilitar la opcion de elegir la falta -->
+      <ng-template #elseBlock>    
+        <mat-select [(value)]="selected" [disabled]="false">
+            <mat-option value="Ausencia sin aviso">Ausencia sin aviso</mat-option>
+            <mat-option value="Ausencia con aviso">Ausencia con aviso</mat-option>
+            <mat-option value="Presente">Presente</mat-option>
+            <mat-option value="Presente con llegada tarde">Presente con llegada tarde</mat-option>
+        </mat-select>
+      </ng-template>
+    </mat-form-field>
+  </form>
   </mat-dialog-content>
   <mat-dialog-actions>
+    <!-- Boton habilitado/deshabilitado dependiendo del agente elegido
+          si ya se le ha cargado la falta o no -->
     <button mat-raised-button *ngIf="data.confirmado; else elseBlockBotton" disabled (click)="onCloseConfirm()">CONFIRMAR</button>
     <ng-template #elseBlockBotton>
         <button mat-raised-button (click)="onCloseConfirm()">CONFIRMAR</button>
