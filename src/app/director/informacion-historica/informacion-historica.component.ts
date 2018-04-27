@@ -12,8 +12,10 @@ import { EmpleadoService } from '../../libreria/servicios/empleado.service';
   styleUrls: ['./informacion-historica.component.css'],
   providers: [ EmpleadoService ]
 })
+
 export class InformacionHistoricaComponent implements OnInit {
   dialogResult;
+  // Nombre de las columnas de la tabla
   displayedColumns = ['position', 'nombre', 'legajo', 'tipoPlanta'];
   dataSource;
   empleados;
@@ -24,27 +26,30 @@ export class InformacionHistoricaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Se trae todos los agente de la direccion
     this.empleados = this._empleadoService.getEmpleados();
+    // Se cargan todos los agentes en la tabla
     this.dataSource = new MatTableDataSource(this.empleados);
   }
 
+  // Filtro de busqueda entre todos los agente de la tabla. Se puede buscar por cualquier valor de la tabla
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-
+  // Click sobre una fila de la tabla
   selectRow(value) {
     this.openDialog(value);
-    console.log(value);
+    // console.log(value);
   }
-
+  // Abre dialogo, le pasa los datos de la fila seleccionada.
   openDialog(value) {
     const dialogRef = this.dialog.open(DialogHistoricoComponent, {
-      width: '600px',
+      width: '800px',
       data: value
     });
-
+    // Una vez cerrado el dialogo, muestra el resultado del dialogo y lo guarda en dialogResult
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog closed: ` + result);
       this.dialogResult = result;

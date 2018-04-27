@@ -1,3 +1,4 @@
+/*Tabla de dataSource*/
 .demo-tab-group {
     border: 1px solid #e8e8e8;
   }
@@ -10,7 +11,38 @@
     background-color: #e4e4e4;
   }
 
-  
+/*Css header accordion*/
+.header-accordion{
+  background-color: #e4e4e4;
+  padding: 16px;
+}
+  .td-accordion{
+    width: 70%;
+  }
+
+/*Detalles accordion*/
+.fechas-accordion{
+  padding: 1%;
+  width: 40%;
+  position: relative;
+}
+
+.detalles-accordion{
+  padding: 1%;
+  width: 55%;
+  position: relative;
+}
+
+
 .mat-header-cell.mat-sort-header-sorted {
   color: black;
+}
+
+div.mat-expansion-panel-content:not(.mat-expanded) {
+  height: 0px !important;
+  visibility: hidden !important;
+}
+
+.mat-expansion-panel-header  {
+  height: 48px;
 }

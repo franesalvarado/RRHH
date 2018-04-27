@@ -1,27 +1,273 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title><h2>{{data.name}}</h2></mat-card-title>
+    <mat-card-title><h2>{{data.nombre}} {{data.apellido}} </h2></mat-card-title>
     <mat-card-subtitle>Informacion detallada del agente</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
       <mat-dialog-content>
-          <div class="mat-elevation-z8 example-container">
-              <mat-table #table [dataSource]="dataSource"
-               matSort matSortActive="fecha" matSortDirection="asc">
-                <!-- Position Column -->
-                <ng-container matColumnDef="fecha">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true"> Fecha </mat-header-cell>
-                  <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
-                </ng-container>
-                <!-- Name Column -->
-                <ng-container matColumnDef="tipoFalta">
-                  <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
-                </ng-container>
-                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-              </mat-table>
+      <mat-tab-group (selectedTabChange)="onLinkClick($event)">
+          <mat-tab label="Todo">
+              <!--INICIO DE TAB DE TODO-->
+              <div class="mat-elevation-z8 example-container">
+                  <mat-table #table [dataSource]="dataSource"
+                   matSort matSortActive="fecha" matSortDirection="asc">
+                    <ng-container matColumnDef="fecha">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true"> Fecha </mat-header-cell>
+                      <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="tipoFalta">
+                      <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                  </mat-table>
               </div>
+          </mat-tab>
+          <!--INICIO DE TAB DE PRESENTE-->
+          <mat-tab label="Presente">
+              <div class="mat-elevation-z8 example-container">
+                  <mat-table #table [dataSource]="dataSource" 
+                   matSort matSortActive="fecha" matSortDirection="asc">
+                    <ng-container matColumnDef="fecha">
+                      <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+                      <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="tipoFalta">
+                      <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                  </mat-table>
+              </div>
+          </mat-tab>
+          <!--INICIO DE TAB DE AUSENTE-->
+          <mat-tab label="Ausente">
+            <div class="header-accordion">
+              <table>
+                <tr>
+                  <td class="td-accordion">
+                    Fecha
+                  </td>
+                  <td class="td-accordion">
+                    Parte diario
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- 
+              Bug de accordion, en la version 6.00 no sucede pero es beta aun.
+              Version actual 5.2.4
+            -->
+                <mat-accordion>
+                  <mat-expansion-panel *ngFor="let item of dataSourceAusente; let i = index" >
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{item.fecha | date:'dd/MM/yyyy'}}
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        {{item.tipoFalta}}
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <strong>Observaciones:</strong> {{item.detalles}}
+                  </mat-expansion-panel>
+              </mat-accordion>
+<!-- VISTA POR TABLA (Filtrado por matSort)
+<div class="mat-elevation-z8 example-container">
+    <mat-table #table [dataSource]="dataSource" 
+      matSort matSortActive="fecha" matSortDirection="asc">
+      <ng-container matColumnDef="fecha">
+        <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tipoFalta">
+        <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></mat-row>
+    </mat-table>
+</div>
+-->
+          </mat-tab>
+          <!--INICIO DE TAB DE LICENCIA MEDICA-->
+          <mat-tab label="Licencia Medica">
+          <div class="header-accordion">
+              <table>
+                <tr>
+                  <td class="td-accordion">
+                    Fecha inicio
+                  </td>
+                  <td class="td-accordion">
+                    Parte diario
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- 
+              Bug de accordion, en la version 6.00 no sucede pero es beta aun.
+              Version actual 5.2.4
+            -->
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let medico of dataSourceMedico; let i = index" >
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{medico.fecha[i-i] | date:'dd/MM/yyyy'}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{medico.falta}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="fechas-accordion">
+                    <strong>Dias con licencia medica</strong>
+                    <div *ngFor="let uniFalta of dataSourceMedico[i].fecha; let e = index">
+                      {{uniFalta | date:'dd/MM/yyyy'}}
+                    </div>
+                  </div>
+                  <div class="detalles-accordion">
+                    <p><strong>Tipo enfermerdad:</strong> {{medico.tipoLicencia}}</p>
+                    <p><strong>Diagnostico:</strong> {{medico.diagnostico}}</p>
+                    <p><strong>Observaciones:</strong> {{medico.detalles}}</p>
+                  </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+<!-- VISTA POR TABLA (Filtrado por matSort)
+    <div class="mat-elevation-z8 example-container">
+        <mat-table #table [dataSource]="dataSource" 
+          matSort matSortActive="fecha" matSortDirection="asc">
+
+          <ng-container matColumnDef="fecha">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tipoFalta">
+            <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></mat-row>
+        </mat-table>
+    </div>
+-->
+          </mat-tab>
+          <!--INICIO DE TAB DE LICENCIA ANUAL EXTRAORDINARIA-->
+          <mat-tab label="Licencia Anual Extraordinaria">
+              <div class="header-accordion">
+                  <table>
+                    <tr>
+                      <td class="td-accordion">
+                        Fecha inicio
+                      </td>
+                      <td class="td-accordion">
+                        Parte diario
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- 
+                  Bug de accordion, en la version 6.00 no sucede pero es beta aun.
+                  Version actual 5.2.4
+                -->
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let anual of dataSourceAnual; let i = index" >
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          {{anual.fecha[i-i] | date:'dd/MM/yyyy'}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          Licencia Anual Complementeria
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <div class="fechas-accordion">
+                        <strong>Dias con licencia anual extraordinaria</strong>
+                        <div *ngFor="let uniFalta of dataSourceAnual[i].fecha; let e = index">
+                          {{uniFalta | date:'dd/MM/yyyy'}}
+                        </div>
+                      </div>
+                      <div class="detalles-accordion">
+                        <p><strong>Observaciones:</strong> {{anual.detalles}}</p>
+                      </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+<!-- VISTA POR TABLA (Filtrado por matSort)
+    <div class="mat-elevation-z8 example-container">
+        <mat-table #table [dataSource]="dataSource" 
+          matSort matSortActive="fecha" matSortDirection="asc">
+          <ng-container matColumnDef="fecha">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="tipoFalta">
+            <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></mat-row>
+        </mat-table>
+    </div>
+  -->
+          </mat-tab>
+          <!--INICIO DE TAB DE ART-->
+          <mat-tab label="Licencia por ART">
+            <div class="header-accordion">
+                <table>
+                  <tr>
+                    <td class="td-accordion">
+                      Fecha inicio
+                    </td>
+                    <td class="td-accordion">
+                      Parte diario
+                    </td>
+                  </tr>
+                </table>
+            </div>
+              <mat-accordion>
+                  <mat-expansion-panel *ngFor="let ART of dataSourceART; let i = index" >
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{ART.fecha[i-i] | date:'dd/MM/yyyy'}}
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Licencia por ART
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="fechas-accordion">
+                      <strong>Dias con licencia por ART</strong>
+                      <div *ngFor="let uniFalta of dataSourceART[i].fecha; let e = index">
+                        {{uniFalta | date:'dd/MM/yyyy'}}
+                      </div>
+                    </div>
+                    <div class="detalles-accordion">
+                      <p><strong>Numero de Siniestro:</strong> {{ART.nroSiniestro}}</p>
+                      <p><strong>Fecha de Control:</strong> {{ART.fechaControl | date:'dd/MM/yyyy'}}</p>
+                      <p><strong>Observaciones:</strong> {{ART.detalles}}</p>
+                    </div>
+                  </mat-expansion-panel>
+              </mat-accordion>
+
+<!-- VISTA POR TABLA (Filtrado por matSort)
+    <div class="mat-elevation-z8 example-container">
+        <mat-table #table [dataSource]="dataSource" 
+          matSort matSortActive="fecha" matSortDirection="asc">
+
+          <ng-container matColumnDef="fecha">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.fecha |  date:'dd/MM/yyyy'}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tipoFalta">
+            <mat-header-cell *matHeaderCellDef> Parte diario </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.tipoFalta}} </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></mat-row>
+        </mat-table>
+    </div>
+-->
+          </mat-tab>
+        </mat-tab-group>
       </mat-dialog-content> 
   </mat-card-content>
   <mat-card-actions>

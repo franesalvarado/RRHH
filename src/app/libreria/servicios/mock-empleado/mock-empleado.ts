@@ -50,10 +50,22 @@ export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
     ausente:
       [
         {
-          falta: "Ausencia con aviso",
+          falta: "Ausente con aviso",
           fecha: new Date("2018-1-29"),
           detalles: "Falta por hijo descompuesto"
+        },
+        
+        {
+          falta: "Ausente con aviso",
+          fecha: new Date("2018-4-25"),
+          detalles: "Falta por hijo descompuesto"
+        },
+        {
+          falta: "Ausente",
+          fecha: new Date("2018-1-26"),
+          detalles: "Falta por hijo descompuesto"
         }  
+
       ],
     licenciaMedica:
       [
@@ -65,7 +77,7 @@ export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
           [
               new Date("2018-2-1"),
               new Date("2018-2-2"),
-              new Date("2018-2-2"),
+              new Date("2018-2-3"),
           ],
           detalles: "Tres dia de reposo"
         },
@@ -102,13 +114,13 @@ export const EMPLEADOSFALTAS: EmpleadoFaltas[] = [
           falta: "Licencia Anual Extraordinaria",
           fecha: 
           [
-            new Date("2016-4-16"),
-            new Date("2016-4-17"),
-            new Date("2016-4-18"),
-            new Date("2016-4-19"),
-            new Date("2016-4-20"),
-            new Date("2016-4-21"),
-            new Date("2016-4-22")
+            new Date("2018-4-16"),
+            new Date("2018-4-17"),
+            new Date("2018-4-18"),
+            new Date("2018-4-19"),
+            new Date("2018-4-20"),
+            new Date("2018-4-21"),
+            new Date("2018-4-22")
           ],
           detalles: "Restan 14 dias de vacaciones"
         }
