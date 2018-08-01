@@ -15,7 +15,7 @@ import { DatePipe } from '@angular/common';
   selector: 'app-dialog-historico',
   templateUrl: './dialog-historico.component.html',
   styleUrls: ['./dialog-historico.component.css'],
-  providers: [ EmpleadoService, DatePipe ]
+  providers: [EmpleadoService, DatePipe]
 })
 export class DialogHistoricoComponent implements OnInit {
   // Variable de columnas
@@ -47,73 +47,73 @@ export class DialogHistoricoComponent implements OnInit {
   ngOnInit() {
   }
   constructor(public thisDialogRef: MatDialogRef<DialogHistoricoComponent>,
-              @Inject(MAT_DIALOG_DATA) public data,
-              private _EmpleadoService: EmpleadoService,
-              private _datePipe: DatePipe) {
-    // De data viene los datos del agente elegido, solo se elije el legajo            
+    @Inject(MAT_DIALOG_DATA) public data,
+    private _EmpleadoService: EmpleadoService,
+    private _datePipe: DatePipe) {
+    // De data viene los datos del agente elegido, solo se elije el legajo
     this.legajoData = data.legajo;
     // Se pide las faltas de TODOS los agentes.
     this.agentesFaltas = this._EmpleadoService.getEmpleadosFaltas();
     // Se busca el agente que se selecciono
     for (let i in this.agentesFaltas) {
       if (this.agentesFaltas[i].legajo == this.legajoData)
-      // Se separa por el distinto contenido de cada uno y distintas cantidades.
+        // Se separa por el distinto contenido de cada uno y distintas cantidades.
         this.presenteAux = this.agentesFaltas[i].presente;
-        this.ausenteAux = this.agentesFaltas[i].ausente;
-        this.licenciaAnualAux = this.agentesFaltas[i].licenciaAnual;
-        this.licenciaARTAux = this.agentesFaltas[i].licenciaART;
-        this.licenciaMedicaAux = this.agentesFaltas[i].licenciaMedica;
+      this.ausenteAux = this.agentesFaltas[i].ausente;
+      this.licenciaAnualAux = this.agentesFaltas[i].licenciaAnual;
+      this.licenciaARTAux = this.agentesFaltas[i].licenciaART;
+      this.licenciaMedicaAux = this.agentesFaltas[i].licenciaMedica;
     }
 
     // Inicio de cargas de Presente
-    for (let e in this.presenteAux){
+    for (let e in this.presenteAux) {
       this.agenteFaltas.push({
-          tipoFalta: this.presenteAux[e].falta, 
-          fecha: this._datePipe.transform(new Date(this.presenteAux[e].fecha))
-        });
+        tipoFalta: this.presenteAux[e].falta,
+        fecha: this._datePipe.transform(new Date(this.presenteAux[e].fecha))
+      });
       this.dataSourcePresente.push({
-          tipoFalta: this.presenteAux[e].falta, 
-          fecha: this._datePipe.transform(new Date(this.presenteAux[e].fecha))
-        });
+        tipoFalta: this.presenteAux[e].falta,
+        fecha: this._datePipe.transform(new Date(this.presenteAux[e].fecha))
+      });
     };
     // Fin de cargas de presencias
     // Inicio de cargas de faltas
-    for (let e in this.ausenteAux){
+    for (let e in this.ausenteAux) {
       this.agenteFaltas.push({
-          tipoFalta: this.ausenteAux[e].falta, 
-          fecha: this._datePipe.transform(new Date(this.ausenteAux[e].fecha))
-        });
+        tipoFalta: this.ausenteAux[e].falta,
+        fecha: this._datePipe.transform(new Date(this.ausenteAux[e].fecha))
+      });
       this.dataSourceAusente.push({
-          tipoFalta: this.ausenteAux[e].falta, 
-          fecha: this._datePipe.transform(new Date(this.ausenteAux[e].fecha)),
-          detalles: this.ausenteAux[e].detalles
-        });
+        tipoFalta: this.ausenteAux[e].falta,
+        fecha: this._datePipe.transform(new Date(this.ausenteAux[e].fecha)),
+        detalles: this.ausenteAux[e].detalles
+      });
     };
     // Fin de carga de ausencias
     // Inicio de carga de LicenciaAnual
-    for (let e in this.licenciaAnualAux){
+    for (let e in this.licenciaAnualAux) {
       this.fechaAux = this.licenciaAnualAux[e].fecha;
-      for (let i in this.fechaAux){
+      for (let i in this.fechaAux) {
         this.agenteFaltas.push({
-            tipoFalta: this.licenciaAnualAux[e].falta, 
-            fecha: this._datePipe.transform(new Date(this.fechaAux[i]))
-          });
+          tipoFalta: this.licenciaAnualAux[e].falta,
+          fecha: this._datePipe.transform(new Date(this.fechaAux[i]))
+        });
       };
       this.dataSourceAnual.push({
-          tipoFalta: this.licenciaAnualAux[e].falta,
-          fecha: this.licenciaAnualAux[e].fecha,
-          detalles: this.licenciaAnualAux[e].detalles
-        });
+        tipoFalta: this.licenciaAnualAux[e].falta,
+        fecha: this.licenciaAnualAux[e].fecha,
+        detalles: this.licenciaAnualAux[e].detalles
+      });
     };
     //Fin de cargas de licencias anuales
     //Inicio de carga de Licencia por ART
-    for (let e in this.licenciaARTAux){
+    for (let e in this.licenciaARTAux) {
       this.fechaAux = this.licenciaARTAux[e].fecha
-      for (let i in this.fechaAux){
+      for (let i in this.fechaAux) {
         this.agenteFaltas.push({
-            tipoFalta: this.licenciaARTAux[e].falta, 
-            fecha: this._datePipe.transform(new Date(this.fechaAux[i]))
-          });
+          tipoFalta: this.licenciaARTAux[e].falta,
+          fecha: this._datePipe.transform(new Date(this.fechaAux[i]))
+        });
       };
       this.dataSourceART.push({
         falta: this.licenciaARTAux[e].falta,
@@ -124,22 +124,22 @@ export class DialogHistoricoComponent implements OnInit {
       });
     };
     // Fin de carga de licencia por ART
-    for (let e in this.licenciaMedicaAux){
+    for (let e in this.licenciaMedicaAux) {
       this.fechaAux = this.licenciaMedicaAux[e].fecha;
-      for (let i in this.fechaAux){
+      for (let i in this.fechaAux) {
         this.agenteFaltas.push(
           {
-            tipoFalta: this.licenciaMedicaAux[e].falta, 
+            tipoFalta: this.licenciaMedicaAux[e].falta,
             fecha: this._datePipe.transform(new Date(this.fechaAux[i]))
           });
       }
       this.dataSourceMedico.push({
-          falta: this.licenciaMedicaAux[e].falta,
-          tipoLicencia: this.licenciaMedicaAux[e].tipoLicencia,
-          diagnostico: this.licenciaMedicaAux[e].diagnostico,
-          fecha: this.licenciaMedicaAux[e].fecha,
-          detalles: this.licenciaMedicaAux[e].detalles
-        });
+        falta: this.licenciaMedicaAux[e].falta,
+        tipoLicencia: this.licenciaMedicaAux[e].tipoLicencia,
+        diagnostico: this.licenciaMedicaAux[e].diagnostico,
+        fecha: this.licenciaMedicaAux[e].fecha,
+        detalles: this.licenciaMedicaAux[e].detalles
+      });
     };
     // Fin de carga de licencia medica
 
@@ -147,8 +147,6 @@ export class DialogHistoricoComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.agenteFaltas);
   }
 
-  /*
-  DESHABILITADO POR TABS
   // El evento es llamado cuando se cambia de tab
   onLinkClick(event){
     // Si esta en el tab 0 (Todo), llama a la funcion para que filtre NADA
@@ -161,6 +159,7 @@ export class DialogHistoricoComponent implements OnInit {
       this.applyFilter("");
       this.applyFilter("Presente");
     }
+    /* HABILITADO SOLAMENTE PARA PRESENTE
     // Si esta en el tab 2 (Ausente), llama a la funcion para que filtre Ausente
     if (event.index == 2){
       // Primero filtra nada para eliminar filtros anteriores.
@@ -184,7 +183,7 @@ export class DialogHistoricoComponent implements OnInit {
       // Primero filtra nada para eliminar filtros anteriores.
       this.applyFilter("");
       this.applyFilter("Licencia por ART");
-    }
+    }*/
   }
   // Funcion que se encarga del filtrado de la tabla.
   applyFilter(filterValue) {
@@ -192,7 +191,7 @@ export class DialogHistoricoComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
- */
+
 
   // Cerrar dialogo
   onCloseCancel() {

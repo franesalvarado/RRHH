@@ -3,11 +3,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Empleado } from '../../../libreria/models/empleados';
 import { TipoFalta, TipoPresente } from '../../../libreria/models/director/formulario-director';
 
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { startWith } from 'rxjs/operators/startWith';
-import { map, take } from 'rxjs/operators';
-
 @Component({
   selector: 'app-dialog-table',
   templateUrl: './dialog-table.component.html',
@@ -15,9 +10,7 @@ import { map, take } from 'rxjs/operators';
 })
 export class DialogTableComponent implements OnInit {
   displayDate = new Date();
-  myControl: FormControl = new FormControl();
   dataDialog;
-  filteredOptions: Observable<string[]>;
   selected = "Ausencia sin aviso";
   selectedConfirm = "Presente";
   detalles = "";
@@ -30,9 +23,10 @@ export class DialogTableComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  // En caso de clickear aceptar
   onCloseConfirm() {
     this.thisDialogRef.close('confirm');
+    // Si se almacena una falta, se guarda este tipo de formulario
     if (this.selected == "Ausencia sin aviso" || this.selected == "Ausencia con aviso"){
       this.tipoFalta = {
         falta: this.selected,
@@ -40,6 +34,7 @@ export class DialogTableComponent implements OnInit {
         detalles: this.detalles
       }
     console.log(this.tipoFalta);
+    // En caso de ser un presente, este tipo
     }else if (this.selected == "Presente" || this.selected == "Presente con llegada tarde"){
       this.tipoPresente = {
         falta: this.selected,
@@ -48,7 +43,7 @@ export class DialogTableComponent implements OnInit {
     console.log(this.tipoPresente);
     }
   }
-
+  // En caso de ser cancelado, este
   onCloseCancel() {
     this.thisDialogRef.close('Cancel');
   }

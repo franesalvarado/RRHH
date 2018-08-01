@@ -15,12 +15,18 @@ import { DataSource } from '@angular/cdk/collections';
   providers: [ EmpleadoService ]
 })
 export class ListadoMaterialComponent implements OnInit {
+  // Parametro para filtrar por tipoPlanta
   public parametro = null;
+  // Columnas del table
   displayedColumns = ['position', 'name', 'legajo', 'tipoContrato', 'confirmado'];
   dataSource;
+  // Se asigna el nombre de la direccion del personal
   direccion = 'Direccion de Gestion Informatizada';
+  // Data seleccionada para la table
   ELEMENT_DATA_SELECT = [];
+  // Recibe del servicio a los empleados
   empleados;
+  // Muestra el resultado del dialogo
   dialogResult;
 
   constructor(
@@ -31,32 +37,22 @@ export class ListadoMaterialComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Recibe los empleados del servicio
     this.empleados = this._empleadoService.getEmpleados();
-    console.log(this.empleados);
+    // Filtra segun el parametro recibido (planta permanente, becado, coordinado)
     this._route.params.forEach((params: Params) => {
         this.parametro = params['page'];
-        // console.log(this.parametro);
+        // si el parametro es null no va entrar al If y va a mostrar TODO
         if (this.parametro != null) {
           this.ELEMENT_DATA_SELECT = [];
+          // En caso de entrar, filtra por el tipo de planta que es
           for (let i in this.empleados) {
             if (this.empleados[i].tipoPlanta == this.parametro) {
               // console.log(ELEMENT_DATA[i]);
               this.ELEMENT_DATA_SELECT.push(this.empleados[i]);
             }
           }
-          this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
-        }else{
-          for (let i in this.empleados){
-            this.ELEMENT_DATA_SELECT.push(this.empleados[i]);
-            if (this.empleados[i].cantFaltasMensual > 2){
-              if (this.empleados[i].cantFaltasMensual > 4){
-                this.ELEMENT_DATA_SELECT[i].color = "red";
-              }
-              else{
-                this.ELEMENT_DATA_SELECT[i].color = "yellow";
-              }
-            }
-          }
+          // Se carga a la tabla.
           this.dataSource = new MatTableDataSource(this.ELEMENT_DATA_SELECT);
         }
     });
@@ -72,8 +68,8 @@ export class ListadoMaterialComponent implements OnInit {
 
   // Cuando cliqueas una fila...
   selectRow(value) {
+    // Abre un dialogo con los valores de la fila
     this.openDialog(value);
-    console.log(value);
   }
 
   openDialog(value) {
@@ -81,7 +77,7 @@ export class ListadoMaterialComponent implements OnInit {
       width: '600px',
       data: value
     });
-
+// Despues de cerrar el dialogo, muestra el resultado
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog closed: ` + result);
       this.dialogResult = result;
